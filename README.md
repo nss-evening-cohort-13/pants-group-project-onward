@@ -1,4 +1,5 @@
 Link to Figma: https://www.figma.com/file/0KkXdUtpuKgvOddaJa5x6O/The-Jort-Port?node-id=0%3A1
+Link to Style Guide: https://docs.google.com/document/d/1a4K46QNeE-BT47A8HkkEbmKiyTQxNvcO3TCBnmB_qEE/edit
 
 
 

@@ -1,3 +1,38 @@
-body {
-    background-color: hotpink;
+/*** Navigation bar ***/
+.navbar {
+  background-color: #2d394b;
+  height: 3.75em;
+}
+
+.navbar-brand {
+  color: #ffffff;
+  text-transform: uppercase;
+  border: 2px #dbab3f solid;
+  border-radius: 2px;
+  padding: 6px;
+  font-family: 'Black Ops One', cursive;
+  font-size: x-large;
+}
+
+.nav-link {
+  font-family: 'Open Sans', sans-serif;
+  color: #ffffff;
+  font-size: large;
+}
+
+.navbar-brand:hover {
+  color: #ffffff;
+}
+
+.nav-link:hover {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.btn {
+  background-color: #dbab3f;
+}
+
+.active {
+  color: #dbab3f;
 }

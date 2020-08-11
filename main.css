@@ -36,3 +36,23 @@
 .active {
   color: #dbab3f;
 }
+
+/*** Home Page  ***/
+#photos {
+  margin: 5%;
+  padding: 5%;
+  border: #dbab3f 2px solid;
+  line-height: 0;
+  column-count: 4;
+  column-gap: 10px;
+}
+
+#photos img {
+  width: 100%;
+  height: auto;
+  margin: 5px;
+}
+
+.title {
+  margin: 5%;
+}

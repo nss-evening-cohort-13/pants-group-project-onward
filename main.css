@@ -1,3 +1,8 @@
+/* Body */
+body {
+    background-color: #1A2E3C;
+}
+
 /*** Navigation bar ***/
 .navbar {
   background-color: #2d394b;
@@ -31,10 +36,31 @@
 
 .btn {
   background-color: #dbab3f;
+  color: #ffffff;
 }
 
 .active {
   color: #dbab3f;
+}
+
+
+/* Contact Us */
+
+.name-email--container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.contact--form {
+    width: 33%;
+    margin-left: 20px;
+    color: #ffffff;
+}
+
+.contact--header {
+    margin-left: 20px;
+    color: #ffffff;
 }
 
 /* Body */

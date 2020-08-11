@@ -123,3 +123,11 @@ const init = () => {
 init();
 
 // END Product Page
+=======
+console.log("Sort the jort port by cohort. Abort!")
+
+// *** Fashion Show Page JS***
+
+
+
+// *** End Fashion Show

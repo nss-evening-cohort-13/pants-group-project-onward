@@ -1,3 +1,8 @@
+/* Body */
+body {
+    background-color: #1A2E3C;
+}
+
 /*** Navigation bar ***/
 .navbar {
   background-color: #2d394b;
@@ -31,6 +36,7 @@
 
 .btn {
   background-color: #dbab3f;
+
   color: black;
   border: none;
   font-family: "Open Sans", sans-serif;
@@ -44,6 +50,7 @@
 .active {
   color: #dbab3f;
 }
+
 
 /* Body */
 
@@ -98,4 +105,59 @@ p.footer {
   background-color: black;
   color: #dbab3f;
   font-family: "Open Sans", sans-serif;
+=======
+
+/* Contact Us */
+
+.name-email--container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.contact--form {
+    width: 33%;
+    margin-left: 20px;
+    color: #ffffff;
+}
+
+.contact--header {
+    margin-left: 20px;
+    color: #ffffff;
+}
+
+/* Body */
+
+body {
+    background-color: #1A2E3C;
+}
+
+/* About Us */
+
+.about--us {
+    border: 3px solid #FFFFFF;
+    margin: 50px auto;
+    width: 75%;
+    background-color: #CBB989;
+    padding: 20px;
+}
+
+.why--jorts {
+    font-family: 'Black Ops One', cursive;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.about--us p {
+    font-family: 'Open Sans', sans-serif;
+    text-align: justify;
+    color: #FFFFFF;
+}
+
+.about--us img {
+    width: 400px;
+    clear: left;
+    float: right;
+    margin-left: 20px;
+    border: 2px solid #FFFFFF;
 }

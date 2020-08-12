@@ -15,12 +15,13 @@ comments: ''
 
 const buildModal = () => {
     let domString = '';
+
     for (let i = 0; i < userInfoArray.length; i++) {
-    domString += `<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    domString += `<div class="modal fade" id="userSubmitModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Is this correct?</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Is this information correct?</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -32,7 +33,7 @@ const buildModal = () => {
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-          <button type="button" class="btn btn-primary">Confirm</button>
+          <button type="button" class="btn btn-primary" id="modalConfirm" data-dismiss="modal" data-toggle="modal" data-target="confirmationModal">Confirm</button>
         </div>
       </div>
     </div>
@@ -40,6 +41,35 @@ const buildModal = () => {
     }
   printModalToDom('modalContainer', domString);
 }
+ 
+const confirmSubmit = (e) => {
+    let domString = '';
+
+    const target = e.target.id;
+    for (let i = 0; i < userInfoArray.length; i++) {
+    if (target === `modalConfirm`) {
+            domString += `<div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="confirmationModalLabel">Success!</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Thank you for your input!
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>`
+        }
+    }
+        printModalToDom('modalContainer', domString);
+    }
 
 const printModalToDom = (divId, textToPrint) => {
     const selectedDiv = document.getElementById(divId);
@@ -62,13 +92,16 @@ const printModalToDom = (divId, textToPrint) => {
   }
 
   const contactButtonEvent = () => {
-  document.querySelector('#formSubmitBtn').addEventListener('click', submitUserInfo);
-  document.querySelector('#formSubmitBtn').addEventListener('click', buildModal);
+      for (let i = 0; i < userInfoArray.length; i++) {
+    document.querySelector('#formSubmitBtn').addEventListener('click', submitUserInfo);
+    document.querySelector('#formSubmitBtn').addEventListener('click', buildModal);
+    document.querySelector('#modalContainer').addEventListener('click', confirmSubmit);
+      }
   }
 
-  const init4 = () => {
+  const initRb = () => {
     contactButtonEvent();
   }
 
-  init4();
+  initRb();
 // *** End About Us / Contact Page JS ***

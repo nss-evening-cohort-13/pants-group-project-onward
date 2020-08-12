@@ -33,7 +33,7 @@ const buildModal = () => {
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-          <button type="button" class="btn btn-primary" id="modalConfirm" data-dismiss="modal" data-toggle="modal" data-target="confirmationModal">Confirm</button>
+          <button type="button" class="btn" id="modalConfirm" data-dismiss="modal" data-toggle="modal" data-target="#confirmationModal">Confirm</button>
         </div>
       </div>
     </div>
@@ -46,7 +46,6 @@ const confirmSubmit = (e) => {
     let domString = '';
 
     const target = e.target.id;
-    for (let i = 0; i < userInfoArray.length; i++) {
     if (target === `modalConfirm`) {
             domString += `<div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
@@ -67,8 +66,7 @@ const confirmSubmit = (e) => {
                 </div>
             </div>`
         }
-    }
-        printModalToDom('modalContainer', domString);
+        printModalToDom('secondModalContainer', domString);
     }
 
 const printModalToDom = (divId, textToPrint) => {

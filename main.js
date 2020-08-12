@@ -97,16 +97,32 @@ const printToDom = (divID, textToPrint) => {
   selectedDiv.innerHTML = textToPrint;
 };
 
-const buildShopCards = () => {
+const buildFirstCards = () => {
   let domString = "";
 
-  for (let i = 0; i < products.length; i++) {
+  for (let i = 0; i <= 2; i++) {
     domString += `<div class="card" style="width: 18rem;">`;
     domString += `<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Young_man_wearing_jorts_%28denim_shorts%29_%28cropped%29.jpg/330px-Young_man_wearing_jorts_%28denim_shorts%29_%28cropped%29.jpg" class="card-img-top" alt="..."></img>`
     domString += `<div class="card-body">`;
     domString += `<h5 class="card-title">${products[i].name}</h5>`;
     domString += `<p class="card-text">${products[i].description}</p>`;
-    domString += `<footer>${products[i].price}</footer>`;
+    domString += `<footer><strong>${products[i].price}</strong></footer>`;
+    domString += `</div>`;
+    domString += `</div>`;
+  }
+  printToDom("first", domString);
+}
+
+const buildShopCards = () => {
+  let domString = "";
+
+  for (let i = 3; i < products.length; i++) {
+    domString += `<div class="card" style="width: 18rem;">`;
+    domString += `<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Young_man_wearing_jorts_%28denim_shorts%29_%28cropped%29.jpg/330px-Young_man_wearing_jorts_%28denim_shorts%29_%28cropped%29.jpg" class="card-img-top" alt="..."></img>`
+    domString += `<div class="card-body">`;
+    domString += `<h5 class="card-title">${products[i].name}</h5>`;
+    domString += `<p class="card-text">${products[i].description}</p>`;
+    domString += `<footer><strong>${products[i].price}</strong></footer>`;
     domString += `</div>`;
     domString += `</div>`;
     }
@@ -115,16 +131,29 @@ const buildShopCards = () => {
 };
 
 
+const btnText = () => {
+  let button = document.getElementById('moreLess');
+
+  if (button.innerHTML == "See Less") {
+    button.innerHTML = "See More";
+  } else {
+    button.innerHTML = "See Less";
+  }
+}
+
 // Initialization Function
 const init = () => {
-  buildShopCards();
+  buildFirstCards();
+  document.getElementById("moreLess").addEventListener("click", buildShopCards);
+  document.getElementById("moreLess").addEventListener('click', btnText);
 };
 
 init();
 
+
+
 // END Product Page
-=======
-console.log("Sort the jort port by cohort. Abort!")
+
 
 // *** Fashion Show Page JS***
 

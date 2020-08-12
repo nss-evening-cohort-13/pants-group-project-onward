@@ -1,6 +1,6 @@
 /* Body */
 body {
-    background-color: #1A2E3C;
+  background-color: #1a2e3c;
 }
 
 /*** Navigation bar ***/
@@ -47,18 +47,19 @@ body {
   color: #dbab3f;
   font-family: "Open Sans", sans-serif;
 }
+
 .active {
   color: #dbab3f;
 }
 
-
-/* Body */
-
-body {
-  background-color: #1a2e3c;
-}
 /* Product Page, Cards */
 .product {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.firstCards {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -84,8 +85,12 @@ p.card-text {
 
 p.footer {
   font-family: "Open Sans", sans-serif;
-  padding: 10px 0;
   text-align: center;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* The See More Button */
@@ -105,59 +110,59 @@ p.footer {
   background-color: black;
   color: #dbab3f;
   font-family: "Open Sans", sans-serif;
-=======
+}
 
 /* Contact Us */
 
 .name-email--container {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
 }
 
 .contact--form {
-    width: 33%;
-    margin-left: 20px;
-    color: #ffffff;
+  width: 33%;
+  margin-left: 20px;
+  color: #ffffff;
 }
 
 .contact--header {
-    margin-left: 20px;
-    color: #ffffff;
+  margin-left: 20px;
+  color: #ffffff;
 }
 
 /* Body */
 
 body {
-    background-color: #1A2E3C;
+  background-color: #1a2e3c;
 }
 
 /* About Us */
 
 .about--us {
-    border: 3px solid #FFFFFF;
-    margin: 50px auto;
-    width: 75%;
-    background-color: #CBB989;
-    padding: 20px;
+  border: 3px solid #ffffff;
+  margin: 50px auto;
+  width: 75%;
+  background-color: #cbb989;
+  padding: 20px;
 }
 
 .why--jorts {
-    font-family: 'Black Ops One', cursive;
-    text-align: center;
-    color: #FFFFFF;
+  font-family: "Black Ops One", cursive;
+  text-align: center;
+  color: #ffffff;
 }
 
 .about--us p {
-    font-family: 'Open Sans', sans-serif;
-    text-align: justify;
-    color: #FFFFFF;
+  font-family: "Open Sans", sans-serif;
+  text-align: justify;
+  color: #ffffff;
 }
 
 .about--us img {
-    width: 400px;
-    clear: left;
-    float: right;
-    margin-left: 20px;
-    border: 2px solid #FFFFFF;
+  width: 400px;
+  clear: left;
+  float: right;
+  margin-left: 20px;
+  border: 2px solid #ffffff;
 }

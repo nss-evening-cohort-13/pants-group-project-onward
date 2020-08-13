@@ -76,7 +76,7 @@ const confirmSubmit = (e) => {
                 </div>
             </div>`
         }
-        printModalToDom('secondModalContainer', domString);
+        printModalToDom('modalContainer', domString);
     }
 
 const printModalToDom = (divId, textToPrint) => {

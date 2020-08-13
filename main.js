@@ -100,9 +100,13 @@ const seeWindowHref = () => {
   if (testVariable[1] === 'targetAbout') {
     document.getElementById('about-page').classList.add('active');
   }
-};
 
-seeWindowHref();
+  //shop init
+  const shopVariable = window.location.href;
+  if (shopVariable.includes('shop.html') === true) {
+    shopInit();
+  }
+};
 
 const changeAboutContactLinkColor = e => {
   if (e.target.id === 'contact-page') {
@@ -177,13 +181,13 @@ const btnText = () => {
 };
 
 // Initialization Function
-const init = () => {
+const shopInit = () => {
   buildFirstCards();
   document.getElementById('moreLess').addEventListener('click', buildShopCards);
   document.getElementById('moreLess').addEventListener('click', btnText);
 };
-
-init();
+seeWindowHref();
+// shopInit();
 
 // END Product Page
 

@@ -17,6 +17,15 @@ const buildModal = () => {
     let domString = '';
 
     for (let i = 0; i < userInfoArray.length; i++) {
+      if (userName.value === '') {
+        domString += '<p class="text-danger">Please enter a name</p>'
+        printModalToDom('userNameError', domString);
+      }
+      else if (userEmail.value === '') {
+        domString += '<p class="text-danger">Please enter an email address</p>'
+        printModalToDom('userEmailError', domString);
+      }
+      else {
     domString += `<div class="modal fade" id="userSubmitModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -38,6 +47,7 @@ const buildModal = () => {
       </div>
     </div>
   </div>`
+      }
     }
   printModalToDom('modalContainer', domString);
 }

@@ -15,12 +15,12 @@ body {
   border: 2px #dbab3f solid;
   border-radius: 2px;
   padding: 6px;
-  font-family: "Black Ops One", cursive;
+  font-family: 'Black Ops One', cursive;
   font-size: x-large;
 }
 
 .nav-link {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: #ffffff;
   font-size: large;
 }
@@ -39,19 +39,38 @@ body {
 
   color: black;
   border: none;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .btn:hover {
   background-color: black;
   color: #dbab3f;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .active {
   color: #dbab3f;
 }
 
+/*** Home Page  ***/
+#photos {
+  margin: 5%;
+  padding: 5%;
+  border: #dbab3f 2px solid;
+  line-height: 0;
+  column-count: 4;
+  column-gap: 10px;
+}
+
+#photos img {
+  width: 100%;
+  height: auto;
+  margin: 5px;
+}
+
+.title {
+  margin: 5%;
+}
 /* Product Page, Cards */
 .product {
   display: flex;
@@ -76,15 +95,15 @@ body {
 }
 
 h5.card-title {
-  font-family: "Black Ops One", cursive;
+  font-family: 'Black Ops One', cursive;
 }
 
 p.card-text {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 p.footer {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   text-align: center;
 }
 
@@ -103,13 +122,13 @@ img {
 #moreLess {
   background-color: #dbab3f;
   color: black;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 #moreLess:hover {
   background-color: black;
   color: #dbab3f;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 /* Contact Us */
@@ -148,13 +167,13 @@ body {
 }
 
 .why--jorts {
-  font-family: "Black Ops One", cursive;
+  font-family: 'Black Ops One', cursive;
   text-align: center;
   color: #ffffff;
 }
 
 .about--us p {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   text-align: justify;
   color: #ffffff;
 }

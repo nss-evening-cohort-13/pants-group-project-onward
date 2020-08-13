@@ -1,3 +1,8 @@
+/* Body */
+body {
+  background-color: #1a2e3c;
+}
+
 /*** Navigation bar ***/
 .navbar {
   background-color: #2d394b;
@@ -10,12 +15,12 @@
   border: 2px #dbab3f solid;
   border-radius: 2px;
   padding: 6px;
-  font-family: 'Black Ops One', cursive;
+  font-family: "Black Ops One", cursive;
   font-size: x-large;
 }
 
 .nav-link {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #ffffff;
   font-size: large;
 }
@@ -31,8 +36,150 @@
 
 .btn {
   background-color: #dbab3f;
+
+  color: black;
+  border: none;
+  font-family: "Open Sans", sans-serif;
+}
+
+.btn:hover {
+  background-color: black;
+  color: #dbab3f;
+  font-family: "Open Sans", sans-serif;
 }
 
 .active {
   color: #dbab3f;
+}
+
+/* Product Page, Cards */
+.product {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.firstCards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  background-color: #cbb989;
+  border: 2px solid #dbab3f;
+  margin: 5px;
+  text-align: center;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: 32%;
+}
+
+h5.card-title {
+  font-family: "Black Ops One", cursive;
+}
+
+p.card-text {
+  font-family: "Open Sans", sans-serif;
+}
+
+p.footer {
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* The See More Button */
+.moreButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#moreLess {
+  background-color: #dbab3f;
+  color: black;
+  font-family: "Open Sans", sans-serif;
+}
+
+#moreLess:hover {
+  background-color: black;
+  color: #dbab3f;
+  font-family: "Open Sans", sans-serif;
+}
+
+/* Contact Us */
+
+.name-email--container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.contact--form {
+  width: 33%;
+  margin-left: 20px;
+  color: #ffffff;
+}
+
+.contact--header {
+  margin-left: 20px;
+  color: #ffffff;
+}
+
+/* Body */
+
+body {
+  background-color: #1a2e3c;
+}
+
+/* About Us */
+
+.about--us {
+  border: 3px solid #ffffff;
+  margin: 50px auto;
+  width: 75%;
+  background-color: #cbb989;
+  padding: 20px;
+}
+
+.why--jorts {
+  font-family: "Black Ops One", cursive;
+  text-align: center;
+  color: #ffffff;
+}
+
+.about--us p {
+  font-family: "Open Sans", sans-serif;
+  text-align: justify;
+  color: #ffffff;
+}
+
+.about--us img {
+  width: 400px;
+  clear: left;
+  float: right;
+  margin-left: 20px;
+  border: 2px solid #ffffff;
+}
+
+.fashionTitle {
+  color: white;
+  text-align: center;
+  border: 2px solid white ;
+}
+
+.img-adder {
+  color: white;
+  text-align: center;
+  border: 2px solid white;
+}
+
+.choose-photo {
+  color: white;
+  border: 2px solid white
 }

@@ -15,15 +15,26 @@ comments: ''
 
 const buildModal = () => {
     let domString = '';
+    let emailErrorString = '';
+    const nameErrorMessage = document.getElementById('userNameError');
+    const emailErrorMessage = document.getElementById('userEmailError');
 
     for (let i = 0; i < userInfoArray.length; i++) {
-      if (userName.value === '') {
+      if (userName.value === '' && userEmail.value === '') {
         domString += '<p class="text-danger">Please enter a name</p>'
         printModalToDom('userNameError', domString);
+
+        emailErrorString += '<p class="text-danger">Please enter an email address</p>'
+        printModalToDom('userEmailError', emailErrorString);
+      } else if (userName.value === '') {
+        domString += '<p class="text-danger">Please enter a name</p>'
+        printModalToDom('userNameError', domString);
+        emailErrorMessage.textContent = '';
       }
       else if (userEmail.value === '') {
         domString += '<p class="text-danger">Please enter an email address</p>'
         printModalToDom('userEmailError', domString);
+        nameErrorMessage.textContent = '';
       }
       else {
     domString += `<div class="modal fade" id="userSubmitModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -47,9 +58,11 @@ const buildModal = () => {
       </div>
     </div>
   </div>`
+  printModalToDom('modalContainer', domString);
+  nameErrorMessage.textContent = '';
+  emailErrorMessage.textContent = '';
       }
     }
-  printModalToDom('modalContainer', domString);
 }
  
 const confirmSubmit = (e) => {

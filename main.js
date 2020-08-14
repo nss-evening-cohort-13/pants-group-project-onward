@@ -106,6 +106,10 @@ const seeWindowHref = () => {
   if (shopVariable.includes('shop.html') === true) {
     shopInit();
   }
+  const fashionVariable = window.location.href;
+  if (fashionVariable.includes('fashion.html') === true) {
+    initDM();
+  };
 };
 
 const changeAboutContactLinkColor = e => {
@@ -188,7 +192,6 @@ const shopInit = () => {
   document.getElementById('moreLess').addEventListener('click', buildShopCards);
   document.getElementById('moreLess').addEventListener('click', btnText);
 };
-seeWindowHref();
 // shopInit();
 
 // END Product Page
@@ -247,7 +250,8 @@ inputUpload.addEventListener("change", (e) => {
 initDM = () => {
   buildSlideshow();
 };
+seeWindowHref()
 
-initDM();
+// initDM();
 
 // *** End Fashion Show Page JS ***

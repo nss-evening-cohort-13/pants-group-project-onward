@@ -201,7 +201,7 @@ const shopInit = () => {
 const userImg = [
   {
     imageUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/d/d6/Young_man_wearing_jorts_%28denim_shorts%29_%28cropped%29.jpg",
+      "https://cdn.shopify.com/s/files/1/1977/8779/products/1000SWP_JORTS_1.jpg?v=1582908352",
   },
   {
     imageUrl:
@@ -238,6 +238,9 @@ const buildSlideshow = () => {
   printToDom("slideshow", domstring);
 };
 
+
+const askForInput = () => {
+
 const inputUpload = document.querySelector("#upload-img");
 
 inputUpload.addEventListener("change", (e) => {
@@ -245,10 +248,13 @@ inputUpload.addEventListener("change", (e) => {
 
   userImg.push({ imageUrl: objectURL });
   buildSlideshow();
-});
+    });
+}
 
 initDM = () => {
   buildSlideshow();
+  askForInput()
+
 };
 seeWindowHref()
 

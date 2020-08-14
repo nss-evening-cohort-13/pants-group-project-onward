@@ -200,5 +200,12 @@ body {
 
 .choose-photo {
   color: white;
-  border: 2px solid white
+  /* border: 2px solid white; */
+  padding-top: 10em;
+}
+
+ .carousel {
+  width: 500px;
+  height: 500px;
+  border: 2px solid tan;
 }

@@ -96,6 +96,7 @@ const activateJsByPage = () => {
   const urlName = window.location.href;
   if (urlName.includes('shop.html') === true) {
     shopInit();
+    eventSearch();
   } else if (urlName.includes('fashion.html') === true) {
     initDM();
   } else if (urlName.includes('#targetAbout') === true) {
@@ -118,6 +119,38 @@ const printToDom = (divID, textToPrint) => {
   selectedDiv.innerHTML = textToPrint;
 };
 
+//The Search
+const showCards = (searchString) => {
+  let domString = '';
+  let searchedCards = products.filter((item) => {
+    if (
+      item.name.toLowerCase().includes(searchString) ||
+      item.season.toLowerCase().includes(searchString)
+    ) {
+          domString += `<div class="card" style="width: 18rem;">`;
+          domString += `<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Young_man_wearing_jorts_%28denim_shorts%29_%28cropped%29.jpg/330px-Young_man_wearing_jorts_%28denim_shorts%29_%28cropped%29.jpg" class="card-img-top" alt="..."></img>`;
+          domString += `<div class="card-body">`;
+          domString += `<h5 class="card-title">${item.name}</h5>`;
+          domString += `<p class="card-text">${item.description}</p>`;
+          domString += `<p class="card-text">Season: ${item.season}</p>`;
+          domString += `<footer><strong>${item.price}</strong></footer>`;
+          domString += `</div>`;
+          domString += `</div>`;
+      }
+      printToDom("first", domString);
+    });
+  };
+
+const eventSearch = () => {
+searchBox.addEventListener("keyup", (e) => {
+  let searchChars = [];
+  const searchBox = document.getElementById("searchBox");
+  const searchString = e.target.value.toLowerCase();
+  showCards(searchString);
+});
+};
+
+// Build first Cards
 const buildFirstCards = () => {
   let domString = '';
 

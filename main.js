@@ -252,27 +252,30 @@ const confirmSubmit = e => {
                         </div>
                     </div>
                 </div>
-            </div>`;
-  }
-  printModalToDom('modalContainer', domString);
-};
+            </div>`
+            document.querySelector('#userName').value = '';
+            document.querySelector('#userEmail').value = '';
+            document.querySelector('#userComments').value = '';
+        }
+        printModalToDom('modalContainer', domString);
+    }
 
 const printModalToDom = (divId, textToPrint) => {
-  const selectedDiv = document.getElementById(divId);
-  selectedDiv.innerHTML = textToPrint;
-};
+    const selectedDiv = document.getElementById(divId);
+    selectedDiv.innerHTML = textToPrint;
+  };
 
-const submitUserInfo = e => {
-  const target = e.target.id;
+  const submitUserInfo = (e) => {
+      const target = e.target.id;
 
-  for (let i = 0; i < userInfoArray.length; i++) {
-    if (target === 'formSubmitBtn') {
-      const name = document.querySelector('#userName').value;
-      const email = document.querySelector('#userEmail').value;
-      const comments = document.querySelector('#userComments').value;
-      userInfoArray[i].name = name;
-      userInfoArray[i].email = email;
-      userInfoArray[i].comments = comments;
+      for (let i = 0; i < userInfoArray.length; i++) {
+      if (target === 'formSubmitBtn') {
+        const name = document.querySelector('#userName').value;
+        const email = document.querySelector('#userEmail').value;
+        const comments = document.querySelector('#userComments').value;
+        userInfoArray[i].name = name;
+        userInfoArray[i].email = email;
+        userInfoArray[i].comments = comments;
     }
   }
 };

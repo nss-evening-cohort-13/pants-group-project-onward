@@ -407,6 +407,10 @@ inputUpload.addEventListener("change", (e) => {
   buildSlideshow();
     });
 
+
+
+    
+
 initDM = () => {
   buildSlideshow();
   askForInput()

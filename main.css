@@ -190,22 +190,27 @@ body {
   color: white;
   text-align: center;
   border: 2px solid white ;
+  font-family: sans-serif;
 }
 
 .img-adder {
   color: white;
   text-align: center;
   border: 2px solid white;
+  font-family: sans-serif;
 }
 
 .choose-photo {
   color: white;
   /* border: 2px solid white; */
   padding-top: 10em;
+  font-family: sans-serif;
 }
 
  .carousel {
   width: 500px;
   height: 500px;
   border: 2px solid tan;
+  margin: 0 auto;
+  font-family: sans-serif;
 }

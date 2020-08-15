@@ -169,12 +169,6 @@ img {
   text-align: right;
 }
 
-/* Body */
-
-body {
-  background-color: #1a2e3c;
-}
-
 /* About Us */
 
 .about--us {
@@ -203,6 +197,12 @@ body {
   float: right;
   margin-left: 20px;
   border: 2px solid #ffffff;
+}
+
+.modal-content {
+  background-color: #1a2e3c;
+  color: #ffffff;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .fashionTitle {

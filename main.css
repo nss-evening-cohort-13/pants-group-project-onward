@@ -84,6 +84,12 @@ body {
   justify-content: space-between;
 }
 
+.searchedCards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 .card {
   background-color: #cbb989;
   border: 2px solid #dbab3f;
@@ -130,6 +136,7 @@ img {
   color: #dbab3f;
   font-family: 'Open Sans', sans-serif;
 }
+
 
 /* Contact Us */
 

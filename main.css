@@ -191,3 +191,20 @@ body {
   margin-left: 20px;
   border: 2px solid #ffffff;
 }
+
+.fashionTitle {
+  color: white;
+  text-align: center;
+  border: 2px solid white ;
+}
+
+.img-adder {
+  color: white;
+  text-align: center;
+  border: 2px solid white;
+}
+
+.choose-photo {
+  color: white;
+  border: 2px solid white
+}

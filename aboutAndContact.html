@@ -72,12 +72,15 @@
             placeholder="Search"
             aria-label="Search"
           />
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="button">
             Search
           </button>
         </form>
       </div>
     </nav>
+
+    <div id="modalContainer"></div>
+
     <div class="about--us" id="aboutUs">
       <h1 class="why--jorts">Why Jorts?</h1>
       <p>
@@ -136,27 +139,21 @@
       <div class="name-email--container">
         <div class="form-group">
           <label for="exampleInputName1">Name</label>
-          <input type="text" class="form-control" id="exampleInputName" />
+          <input type="text" class="form-control" id="userName">
+          <div id="userNameError"></div>
         </div>
         <div class="form-group">
           <label for="exampleInputEmail1">Email address</label>
-          <input
-            type="email"
-            class="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-          />
+          <input type="email" class="form-control" id="userEmail" aria-describedby="emailHelp">
+          <div id="userEmailError"></div>
+
         </div>
       </div>
       <div class="form-group">
         <label for="exampleFormControlTextarea1">Comments</label>
-        <textarea
-          class="form-control"
-          id="exampleFormControlTextarea1"
-          rows="3"
-        ></textarea>
+        <textarea class="form-control" id="userComments" rows="3"></textarea>
       </div>
-      <button type="submit" class="btn">Submit</button>
+      <input type="button" class="btn" id="formSubmitBtn" data-toggle="modal" data-target="#userSubmitModal" value="Submit">
     </form>
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

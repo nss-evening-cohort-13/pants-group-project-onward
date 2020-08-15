@@ -84,6 +84,12 @@ body {
   justify-content: space-between;
 }
 
+.searchedCards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 .card {
   background-color: #cbb989;
   border: 2px solid #dbab3f;
@@ -184,21 +190,4 @@ body {
   float: right;
   margin-left: 20px;
   border: 2px solid #ffffff;
-}
-
-.fashionTitle {
-  color: white;
-  text-align: center;
-  border: 2px solid white ;
-}
-
-.img-adder {
-  color: white;
-  text-align: center;
-  border: 2px solid white;
-}
-
-.choose-photo {
-  color: white;
-  border: 2px solid white
 }

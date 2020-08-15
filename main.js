@@ -92,51 +92,26 @@ const products = [
 ];
 
 //Activate Js based on URL
-const seeWindowHref = () => {
-  const testVariable = window.location.href.split('#');
-  if (testVariable[1] === 'targetContact') {
-    document.getElementById('contact-page').classList.add('active');
-  }
-  if (testVariable[1] === 'targetAbout') {
-    document.getElementById('about-page').classList.add('active');
-  }
-
-  //shop init
-  const shopVariable = window.location.href;
-  if (shopVariable.includes('shop.html') === true) {
+const activateJsByPage = () => {
+  const urlName = window.location.href;
+  if (urlName.includes('shop.html') === true) {
     shopInit();
-  }
-  const fashionVariable = window.location.href;
-  if (fashionVariable.includes('fashion.html') === true) {
+  } else if (urlName.includes('fashion.html') === true) {
     initDM();
-  }
-};
-
-// --------------Start home page--------------
-const changeAboutContactLinkColor = e => {
-  if (e.target.id === 'contact-page') {
-    document.getElementById('about-page').classList.remove('active');
-    document.getElementById('contact-page').classList.add('active');
-  }
-  if (e.target.id === 'about-page') {
-    document.getElementById('contact-page').classList.remove('active');
+  } else if (urlName.includes('#targetAbout') === true) {
     document.getElementById('about-page').classList.add('active');
+    initRb();
+  } else if (urlName.includes('#targetContact')) {
+    document.getElementById('contact-page').classList.add('active');
+    initRb();
   }
 };
 
-const initCC = () => {
-  document
-    .querySelector('#contact-page')
-    .addEventListener('click', changeAboutContactLinkColor);
-  document
-    .querySelector('#about-page')
-    .addEventListener('click', changeAboutContactLinkColor);
-};
+// *** Home page ***
 
-initCC();
-// --------------End home page JS--------------
+// *** End home page ***
 
-// --------------Start product page--------------
+// *** Product page ***
 //Print to DOM function and Build Cards
 const printToDom = (divID, textToPrint) => {
   const selectedDiv = document.getElementById(divID);
@@ -192,9 +167,8 @@ const shopInit = () => {
   document.getElementById('moreLess').addEventListener('click', buildShopCards);
   document.getElementById('moreLess').addEventListener('click', btnText);
 };
-// shopInit();
 
-// --------------End product page--------------
+// *** End product page ***
 
 // *** About Us / Contact Page JS ***
 const userInfoArray = [
@@ -317,14 +291,34 @@ const contactButtonEvent = () => {
   }
 };
 
+const changeAboutContactLinkColor = e => {
+  if (e.target.id === 'contact-page') {
+    document.getElementById('about-page').classList.remove('active');
+    document.getElementById('contact-page').classList.add('active');
+  }
+  if (e.target.id === 'about-page') {
+    document.getElementById('contact-page').classList.remove('active');
+    document.getElementById('about-page').classList.add('active');
+  }
+};
+
+const handleLinkClick = () => {
+  document
+    .querySelector('#contact-page')
+    .addEventListener('click', changeAboutContactLinkColor);
+  document
+    .querySelector('#about-page')
+    .addEventListener('click', changeAboutContactLinkColor);
+};
+
 const initRb = () => {
+  handleLinkClick();
   contactButtonEvent();
 };
 
-initRb();
 // *** End About Us / Contact Page JS ***
 
-// --------------Start fashion page--------------
+// *** Fashion Show Page JS ***
 const userImg = [
   {
     imageUrl:
@@ -384,4 +378,4 @@ initDM = () => {
 
 // *** End Fashion Show Page JS ***
 
-seeWindowHref();
+activateJsByPage();

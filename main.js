@@ -91,61 +91,32 @@ const products = [
   },
 ];
 
-// --------------Start Home page JS--------------
-const seeWindowHref = () => {
-  const testVariable = window.location.href.split('#');
-  if (testVariable[1] === 'targetContact') {
-    document.getElementById('contact-page').classList.add('active');
-  }
-  if (testVariable[1] === 'targetAbout') {
-    document.getElementById('about-page').classList.add('active');
-  }
-
-  //shop init
-  const shopVariable = window.location.href;
-  if (shopVariable.includes('shop.html') === true) {
+//Activate Js based on URL
+const activateJsByPage = () => {
+  const urlName = window.location.href;
+  if (urlName.includes('shop.html') === true) {
     shopInit();
-  }
-  const fashionVariable = window.location.href;
-  if (fashionVariable.includes('fashion.html') === true) {
+  } else if (urlName.includes('fashion.html') === true) {
     initDM();
-  };
-  const contactVariable = window.location.href;
-  if (contactVariable.includes('aboutAndContact.html') === true) {
+  } else if (urlName.includes('#targetAbout') === true) {
+    document.getElementById('about-page').classList.add('active');
+    initRb();
+  } else if (urlName.includes('#targetContact')) {
+    document.getElementById('contact-page').classList.add('active');
     initRb();
   }
 };
 
-const changeAboutContactLinkColor = e => {
-  if (e.target.id === 'contact-page') {
-    document.getElementById('about-page').classList.remove('active');
-    document.getElementById('contact-page').classList.add('active');
-  }
-  if (e.target.id === 'about-page') {
-    document.getElementById('contact-page').classList.remove('active');
-    document.getElementById('about-page').classList.add('active');
-  }
-};
+// *** Home page ***
 
-const initCC = () => {
-  document
-    .querySelector('#contact-page')
-    .addEventListener('click', changeAboutContactLinkColor);
-  document
-    .querySelector('#about-page')
-    .addEventListener('click', changeAboutContactLinkColor);
-};
+// *** End home page ***
 
-initCC();
-// --------------End Home page JS--------------
-
+// *** Product page ***
 //Print to DOM function and Build Cards
 const printToDom = (divID, textToPrint) => {
   const selectedDiv = document.getElementById(divID);
   selectedDiv.innerHTML = textToPrint;
 };
-
-
 
 const buildFirstCards = () => {
   let domString = '';
@@ -196,47 +167,42 @@ const shopInit = () => {
   document.getElementById('moreLess').addEventListener('click', buildShopCards);
   document.getElementById('moreLess').addEventListener('click', btnText);
 };
-// shopInit();
 
-// END Product Page
-
-// *** Fashion Show Page JS***
-
-
-// *** End Fashion Show
+// *** End product page ***
 
 // *** About Us / Contact Page JS ***
-const userInfoArray = [{
-name: '',
-email: '',
-comments: ''
-}]
+const userInfoArray = [
+  {
+    name: '',
+    email: '',
+    comments: '',
+  },
+];
 
 const buildModal = () => {
-    let domString = '';
-    let emailErrorString = '';
-    const nameErrorMessage = document.getElementById('userNameError');
-    const emailErrorMessage = document.getElementById('userEmailError');
+  let domString = '';
+  let emailErrorString = '';
+  const nameErrorMessage = document.getElementById('userNameError');
+  const emailErrorMessage = document.getElementById('userEmailError');
 
-    for (let i = 0; i < userInfoArray.length; i++) {
-      if (userName.value === '' && userEmail.value === '') {
-        domString += '<p class="text-danger">Please enter a name</p>'
-        printModalToDom('userNameError', domString);
+  for (let i = 0; i < userInfoArray.length; i++) {
+    if (userName.value === '' && userEmail.value === '') {
+      domString += '<p class="text-danger">Please enter a name</p>';
+      printModalToDom('userNameError', domString);
 
-        emailErrorString += '<p class="text-danger">Please enter an email address</p>'
-        printModalToDom('userEmailError', emailErrorString);
-      } else if (userName.value === '') {
-        domString += '<p class="text-danger">Please enter a name</p>'
-        printModalToDom('userNameError', domString);
-        emailErrorMessage.textContent = '';
-      }
-      else if (userEmail.value === '') {
-        domString += '<p class="text-danger">Please enter an email address</p>'
-        printModalToDom('userEmailError', domString);
-        nameErrorMessage.textContent = '';
-      }
-      else {
-    domString += `<div class="modal fade" id="userSubmitModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      emailErrorString +=
+        '<p class="text-danger">Please enter an email address</p>';
+      printModalToDom('userEmailError', emailErrorString);
+    } else if (userName.value === '') {
+      domString += '<p class="text-danger">Please enter a name</p>';
+      printModalToDom('userNameError', domString);
+      emailErrorMessage.textContent = '';
+    } else if (userEmail.value === '') {
+      domString += '<p class="text-danger">Please enter an email address</p>';
+      printModalToDom('userEmailError', domString);
+      nameErrorMessage.textContent = '';
+    } else {
+      domString += `<div class="modal fade" id="userSubmitModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -256,20 +222,20 @@ const buildModal = () => {
         </div>
       </div>
     </div>
-  </div>`
-  printModalToDom('modalContainer', domString);
-  nameErrorMessage.textContent = '';
-  emailErrorMessage.textContent = '';
-      }
+  </div>`;
+      printModalToDom('modalContainer', domString);
+      nameErrorMessage.textContent = '';
+      emailErrorMessage.textContent = '';
     }
-}
- 
-const confirmSubmit = (e) => {
-    let domString = '';
+  }
+};
 
-    const target = e.target.id;
-    if (target === `modalConfirm`) {
-            domString += `<div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+const confirmSubmit = e => {
+  let domString = '';
+
+  const target = e.target.id;
+  if (target === `modalConfirm`) {
+    domString += `<div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -310,48 +276,77 @@ const printModalToDom = (divId, textToPrint) => {
         userInfoArray[i].name = name;
         userInfoArray[i].email = email;
         userInfoArray[i].comments = comments;
-      }
-      buildModal();
     }
   }
+};
 
-  const contactButtonEvent = () => {
-      for (let i = 0; i < userInfoArray.length; i++) {
-    document.querySelector('#formSubmitBtn').addEventListener('click', submitUserInfo);
-    document.querySelector('#formSubmitBtn').addEventListener('click', buildModal);
-    document.querySelector('#modalContainer').addEventListener('click', confirmSubmit);
-      }
+const contactButtonEvent = () => {
+  for (let i = 0; i < userInfoArray.length; i++) {
+    document
+      .querySelector('#formSubmitBtn')
+      .addEventListener('click', submitUserInfo);
+    document
+      .querySelector('#formSubmitBtn')
+      .addEventListener('click', buildModal);
+    document
+      .querySelector('#modalContainer')
+      .addEventListener('click', confirmSubmit);
   }
+};
 
-  const initRb = () => {
-    contactButtonEvent();
+const changeAboutContactLinkColor = e => {
+  if (e.target.id === 'contact-page') {
+    document.getElementById('about-page').classList.remove('active');
+    document.getElementById('contact-page').classList.add('active');
   }
+  if (e.target.id === 'about-page') {
+    document.getElementById('contact-page').classList.remove('active');
+    document.getElementById('about-page').classList.add('active');
+  }
+};
+
+const handleLinkClick = () => {
+  document
+    .querySelector('#contact-page')
+    .addEventListener('click', changeAboutContactLinkColor);
+  document
+    .querySelector('#about-page')
+    .addEventListener('click', changeAboutContactLinkColor);
+};
+
+const initRb = () => {
+  handleLinkClick();
+  contactButtonEvent();
+};
+
 // *** End About Us / Contact Page JS ***
 
+// *** Fashion Show Page JS ***
 const userImg = [
   {
     imageUrl:
-      "https://cdn.shopify.com/s/files/1/1977/8779/products/1000SWP_JORTS_1.jpg?v=1582908352git ",
+      'https://cdn.shopify.com/s/files/1/1977/8779/products/1000SWP_JORTS_1.jpg?v=1582908352git ',
   },
   {
     imageUrl:
-      "https://cdn.shopify.com/s/files/1/0136/8820/9494/products/0209_680x680_crop_center.jpg?v=1595538457",
+      'https://cdn.shopify.com/s/files/1/0136/8820/9494/products/0209_680x680_crop_center.jpg?v=1595538457',
   },
 ];
 
-
 const buildSlideshow = () => {
-  let domstring = "";
+  let domstring = '';
 
   domstring += `<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">`;
   domstring += `<ol class="carousel-indicators">`;
   for (let i = 0; i < userImg.length; i++) {
-    domstring += `<li data-target="#carouselExampleIndicators" data-slide-to="${i}" class="${ i === 0 ? "active" : ""}"></li>`;
+    domstring += `<li data-target="#carouselExampleIndicators" data-slide-to="${i}" class="${
+      i === 0 ? 'active' : ''
+    }"></li>`;
   }
   domstring += `</ol>`;
-  domstring += `<div class="carousel-inner">`
+  domstring += `<div class="carousel-inner">`;
   for (let i = 0; i < userImg.length; i++) {
-    domstring += `<div class="carousel-item ${i === 0 ? "active" : ""}">`;
+    domstring += `<div class="carousel-item ${i === 0 ? 'active' : ''}">`;
     domstring += `<img src=${userImg[i].imageUrl} class="d-block w-100" alt="...">`;
     domstring += `</div>`;
   }
@@ -365,28 +360,25 @@ const buildSlideshow = () => {
   domstring += `<span class="sr-only">Next</span>`;
   domstring += `</a>`;
   domstring += `</div>`;
-  printToDom("slideshow", domstring);
+  printToDom('slideshow', domstring);
 };
 
 const askForInput = () => {
+  const inputUpload = document.querySelector('#upload-img');
 
-    const inputUpload = document.querySelector("#upload-img");
-    
-    inputUpload.addEventListener("change", (e) => {
-      const objectURL = URL.createObjectURL(inputUpload.files[0]);
-    
-      userImg.push({ imageUrl: objectURL });
-      buildSlideshow();
-        });
-    }
-    
-    initDM = () => {
-      buildSlideshow();
-      askForInput()
-    
-    };
-    seeWindowHref()
+  inputUpload.addEventListener('change', e => {
+    const objectURL = URL.createObjectURL(inputUpload.files[0]);
 
-// initDM();
+    userImg.push({ imageUrl: objectURL });
+    buildSlideshow();
+  });
+};
+
+initDM = () => {
+  buildSlideshow();
+  askForInput();
+};
 
 // *** End Fashion Show Page JS ***
+
+activateJsByPage();

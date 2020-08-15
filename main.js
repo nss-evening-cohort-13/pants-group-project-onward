@@ -110,6 +110,10 @@ const seeWindowHref = () => {
   if (fashionVariable.includes('fashion.html') === true) {
     initDM();
   };
+  const contactVariable = window.location.href;
+  if (contactVariable.includes('aboutAndContact.html') === true) {
+    initRb();
+  }
 };
 
 const changeAboutContactLinkColor = e => {
@@ -283,6 +287,9 @@ const confirmSubmit = (e) => {
                     </div>
                 </div>
             </div>`
+            document.querySelector('#userName').value = '';
+            document.querySelector('#userEmail').value = '';
+            document.querySelector('#userComments').value = '';
         }
         printModalToDom('modalContainer', domString);
     }
@@ -304,6 +311,7 @@ const printModalToDom = (divId, textToPrint) => {
         userInfoArray[i].email = email;
         userInfoArray[i].comments = comments;
       }
+      buildModal();
     }
   }
 
@@ -318,8 +326,6 @@ const printModalToDom = (divId, textToPrint) => {
   const initRb = () => {
     contactButtonEvent();
   }
-
-  initRb();
 // *** End About Us / Contact Page JS ***
 
 const userImg = [

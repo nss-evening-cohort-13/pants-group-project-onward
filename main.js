@@ -96,6 +96,7 @@ const activateJsByPage = () => {
   const urlName = window.location.href;
   if (urlName.includes('shop.html') === true) {
     shopInit();
+    eventSearch();
   } else if (urlName.includes('fashion.html') === true) {
     initDM();
   } else if (urlName.includes('#targetAbout') === true) {
@@ -140,14 +141,16 @@ const showCards = (searchString) => {
     });
   };
 
-let searchChars = [];
-const searchBox = document.getElementById("searchBox");
-
+const eventSearch = () => {
 searchBox.addEventListener("keyup", (e) => {
+  let searchChars = [];
+  const searchBox = document.getElementById("searchBox");
   const searchString = e.target.value.toLowerCase();
   showCards(searchString);
 });
+};
 
+// Build first Cards
 const buildFirstCards = () => {
   let domString = '';
 

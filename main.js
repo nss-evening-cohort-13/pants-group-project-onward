@@ -217,7 +217,7 @@ const buildModal = () => {
           <p>Comments: ${userInfoArray[i].comments}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Go Back</button>
           <button type="button" class="btn" id="modalConfirm" data-dismiss="modal" data-toggle="modal" data-target="#confirmationModal">Confirm</button>
         </div>
       </div>

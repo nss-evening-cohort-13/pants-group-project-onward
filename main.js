@@ -277,7 +277,7 @@ const buildModal = () => {
           <p>Comments: ${userInfoArray[i].comments}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Go Back</button>
           <button type="button" class="btn" id="modalConfirm" data-dismiss="modal" data-toggle="modal" data-target="#confirmationModal">Confirm</button>
         </div>
       </div>
@@ -341,7 +341,6 @@ const submitUserInfo = e => {
 };
 
 const contactButtonEvent = () => {
-  for (let i = 0; i < userInfoArray.length; i++) {
     document
       .querySelector('#formSubmitBtn')
       .addEventListener('click', submitUserInfo);
@@ -351,7 +350,6 @@ const contactButtonEvent = () => {
     document
       .querySelector('#modalContainer')
       .addEventListener('click', confirmSubmit);
-  }
 };
 
 const changeAboutContactLinkColor = e => {
@@ -385,7 +383,7 @@ const initRb = () => {
 const userImg = [
   {
     imageUrl:
-      'https://cdn.shopify.com/s/files/1/1977/8779/products/1000SWP_JORTS_1.jpg?v=1582908352git ',
+      "https://cdn.shopify.com/s/files/1/1977/8779/products/1000SWP_JORTS_1.jpg?v=1582908352",
   },
   {
     imageUrl:
@@ -399,13 +397,11 @@ const buildSlideshow = () => {
   domstring += `<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">`;
   domstring += `<ol class="carousel-indicators">`;
   for (let i = 0; i < userImg.length; i++) {
-    domstring += `<li data-target="#carouselExampleIndicators" data-slide-to="${i}" class="${
-      i === 0 ? 'active' : ''
-    }"></li>`;
+    domstring += `<li data-target="#carouselExampleIndicators" data-slide-to="${i}" class="${i === 0 ? 'active' : ''}"></li>`;
   }
   domstring += `</ol>`;
   domstring += `<div class="carousel-inner">`;
-  for (let i = 0; i < userImg.length; i++) {
+   for (let i = 0; i < userImg.length; i++) {
     domstring += `<div class="carousel-item ${i === 0 ? 'active' : ''}">`;
     domstring += `<img src=${userImg[i].imageUrl} class="d-block w-100" alt="...">`;
     domstring += `</div>`;
@@ -423,16 +419,30 @@ const buildSlideshow = () => {
   printToDom('slideshow', domstring);
 };
 
+
 const askForInput = () => {
   const inputUpload = document.querySelector('#upload-img');
 
-  inputUpload.addEventListener('change', e => {
-    const objectURL = URL.createObjectURL(inputUpload.files[0]);
+// const inputUpload = document.querySelector("#upload-img");
+
+inputUpload.addEventListener("change", (e) => {
+  const objectURL = URL.createObjectURL(inputUpload.files[0]);
+
+  userImg.push({ imageUrl: objectURL });
+  buildSlideshow();
+    });
+
+initDM = () => {
+  buildSlideshow();
+  askForInput()
+
+};
+seeWindowHref()
 
     userImg.push({ imageUrl: objectURL });
     buildSlideshow();
-  });
-};
+  };
+
 
 initDM = () => {
   buildSlideshow();

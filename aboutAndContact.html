@@ -99,7 +99,7 @@
         backed with eights, chickens in the sack buried in the ground
         Jack-a-Diamonds.
       </p>
-      <img src="./images/portPicture.jpg" />
+      <img src="./images/portPicture.jpg" alt="port with boats"/>
       <p>
         Rambling in bed with a hog-eyed man! I woke next morning 'bout half past
         nine, Jimmy crack corn and I don't care jug out in the kitchen? Aces
@@ -134,8 +134,10 @@
         been the ruin of me.
       </p>
     </div>
-    <h2 class="contact--header">Contact Us</h2>
+
+    <div class="form-info--container" id="formInfoContainer">
     <form class="contact--form" id="targetContact">
+      <h2 class="contact--header">Contact Us</h2>
       <div class="name-email--container">
         <div class="form-group">
           <label for="exampleInputName1">Name</label>
@@ -146,7 +148,6 @@
           <label for="exampleInputEmail1">Email address</label>
           <input type="email" class="form-control" id="userEmail" aria-describedby="emailHelp">
           <div id="userEmailError"></div>
-
         </div>
       </div>
       <div class="form-group">
@@ -155,6 +156,13 @@
       </div>
       <input type="button" class="btn" id="formSubmitBtn" data-toggle="modal" data-target="#userSubmitModal" value="Submit">
     </form>
+    <div class="contact--address" id="contactAddress">
+      <p>444 Jort Port Ct</p>
+      <p>Bridgeport, CT 44444</p>
+      <p>Phone: (555) 578-7678</p>
+    </div>
+  </div>
+
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

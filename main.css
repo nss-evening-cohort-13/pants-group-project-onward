@@ -304,3 +304,44 @@ img {
   margin: 0 auto;
   font-family: sans-serif;
 }
+
+/* Carousel Styles */
+.carousel-indicators .active {
+  background-color: #a15798;
+}
+
+.carousel-inner img {
+  width: 100%;
+  max-height: 460px
+}
+
+
+.carousel-control.left span {
+padding: 15px;
+}
+
+.carousel-control.right span {
+padding: 15px;
+}
+
+
+.jort-tips {
+  display: flex;
+  background-color: #333;
+  padding: 6em;
+  color: whitesmoke;
+  border: 2px solid tan;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.jort-tips img{
+  height: 300px;
+  width: 300px;
+  margin-right: 200px;
+}
+
+

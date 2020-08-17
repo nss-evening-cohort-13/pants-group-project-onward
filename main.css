@@ -152,8 +152,9 @@ body {
 }
 
 .card {
+  color: #ffffff;
   background-color: #cbb989;
-  border: 2px solid #dbab3f;
+  border: 2px solid #ffffff;
   margin: 5px;
   text-align: center;
   flex-grow: 0;
@@ -170,15 +171,22 @@ p.card-text {
 }
 
 p.footer {
+  position: sticky;
   font-family: 'Open Sans', sans-serif;
   text-align: center;
 }
 
 img {
-  max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
   height: auto;
 }
 
+img:hover {
+  transform: scaleX(-1);
+}
 /* The See More Button */
 .moreButton {
   display: flex;

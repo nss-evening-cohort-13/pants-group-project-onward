@@ -4,21 +4,21 @@
 const products = [
   {
     name: 'The Classic Jort',
-    pictureURL: 'placeholder',
+    pictureURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Young_man_wearing_jorts_%28denim_shorts%29_%28cropped%29.jpg/330px-Young_man_wearing_jorts_%28denim_shorts%29_%28cropped%29.jpg",
     description: 'A classic pair of jorts for a classic look!',
     price: '$12.99',
     season: 'SPRING',
   },
   {
     name: 'Long Jort',
-    pictureURL: 'placeholder',
+    pictureURL: "https://i5.walmartimages.com/asr/f705d800-859a-468a-8396-a523bd4e8a09_1.3fff5979462bac1a3ebf2468e6f43a6a.jpeg",
     description: 'A longer jort for those cooler months!',
     price: '$16.99',
     season: 'WINTER',
   },
   {
     name: 'Short Jort',
-    pictureURL: 'placeholder',
+    pictureURL: 'https://images-na.ssl-images-amazon.com/images/I/713zBAX5wrL._AC_UX679_.jpg',
     description:
       'Let go of the constraints of good fashion, and enjoy an unrestricted garment for the hottest months!',
     price: '$14.99',
@@ -26,7 +26,7 @@ const products = [
   },
   {
     name: 'MEGA Jort',
-    pictureURL: 'placeholder',
+    pictureURL: 'https://i.pinimg.com/236x/9b/9f/03/9b9f03b8f17a6811008de191034745d6--fashion-advice-kevin-oleary.jpg',
     description:
       'Big jorts, big functionality! legal disclaimer: not to be used as a parachute.',
     price: '$21.99',
@@ -34,7 +34,7 @@ const products = [
   },
   {
     name: 'Canadian Tuxedo Jort',
-    pictureURL: 'placeholder',
+    pictureURL: 'https://www.suitusa.com/images/image46323.jpg',
     description:
       'Put your best foot forward, while still somehow going backward!',
     price: '$15.99',
@@ -42,49 +42,49 @@ const products = [
   },
   {
     name: 'Black Jorts',
-    pictureURL: 'placeholder',
+    pictureURL: 'https://i.etsystatic.com/7679539/r/il/14d86e/507544359/il_570xN.507544359_4mfv.jpg',
     description: "IT'S NOT A PHASE, MOM!",
     price: '$14.99',
     season: 'Winter',
   },
   {
     name: 'Dad Jorts',
-    pictureURL: 'placeholder',
+    pictureURL: 'https://i.pinimg.com/originals/8a/09/e5/8a09e5e7789694a6235368e05488a434.jpg',
     description: "Hey jorts! I'm Dad!",
     price: '$17.99',
     season: 'Summer',
   },
   {
     name: 'Mom Jorts',
-    pictureURL: 'placeholder',
+    pictureURL: 'https://lsco.scene7.com/is/image/lsco/levis/clothing/168880001-back-pdp.jpg?$regular_mobile$',
     description: 'Does this jort make me look tacky?',
     price: '$12.99',
     season: 'Fall',
   },
   {
     name: 'Green Jorts',
-    pictureURL: 'placeholder',
+    pictureURL: 'https://di2ponv0v5otw.cloudfront.net/posts/2018/11/12/5be9fca3c9bf503e5a9a88e6/m_5be9fcb12e1478dcd10076a2.jpg',
     description: 'Leprechauns envy you.',
     price: '$14.99',
     season: 'Spring',
   },
   {
     name: 'Not Jorts',
-    pictureURL: 'placeholder',
+    pictureURL: 'https://previews.123rf.com/images/gorovits/gorovits1603/gorovits160300442/53361383-stylish-paper-sticker-on-white-background-men-s-shorts.jpg',
     description: 'These are not jorts. Nor are they for sale. Or are they?',
     price: '$1.99',
     season: 'Winter',
   },
   {
     name: 'Cool Jorts',
-    pictureURL: 'placeholder',
+    pictureURL: 'https://www.valetmag.com/gr/daily/style/products/jorts_are_cool_again_062117/art-product1.jpg',
     description: 'Must be this cool |-------x-| to wear.',
     price: '$17.99',
     season: 'Summer',
   },
   {
     name: 'Ugly Jorts',
-    pictureURL: 'placeholder',
+    pictureURL: 'https://i.pinimg.com/originals/9d/52/f5/9d52f58f1312ad829784a30cdd9fedc3.jpg',
     description: "Don't tell your uncle.",
     price: '$22.99',
     season: 'Fall',
@@ -154,19 +154,19 @@ const showCards = searchString => {
       item.name.toLowerCase().includes(searchString) ||
       item.season.toLowerCase().includes(searchString)
     ) {
-      domString += `<div class="card" style="width: 18rem;">`;
-      domString += `<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Young_man_wearing_jorts_%28denim_shorts%29_%28cropped%29.jpg/330px-Young_man_wearing_jorts_%28denim_shorts%29_%28cropped%29.jpg" class="card-img-top" alt="..."></img>`;
-      domString += `<div class="card-body">`;
-      domString += `<h5 class="card-title">${item.name}</h5>`;
-      domString += `<p class="card-text">${item.description}</p>`;
-      domString += `<p class="card-text">Season: ${item.season}</p>`;
-      domString += `<footer><strong>${item.price}</strong></footer>`;
-      domString += `</div>`;
-      domString += `</div>`;
-    }
-    printToDom('first', domString);
-  });
-};
+          domString += `<div class="card h-100 d-flex flex-column justify-content-between">`;
+          domString += `<img src=${item.pictureURL} alt="..."/>`;
+          domString += `<div class="card-body">`;
+          domString += `<h5 class="card-title">${item.name}</h5>`;
+          domString += `<p class="card-text">${item.description}</p>`;
+          domString += `<p class="card-text"><em>Season: ${item.season}</em></p>`;
+          domString += `<footer><strong>${item.price}</strong></footer>`;
+          domString += `</div>`;
+          domString += `</div>`;
+      }
+      printToDom("first", domString);
+    });
+  };
 
 const eventSearch = () => {
   searchBox.addEventListener('keyup', e => {
@@ -182,11 +182,12 @@ const buildFirstCards = () => {
   let domString = '';
 
   for (let i = 0; i <= 2; i++) {
-    domString += `<div class="card" style="width: 18rem;">`;
-    domString += `<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Young_man_wearing_jorts_%28denim_shorts%29_%28cropped%29.jpg/330px-Young_man_wearing_jorts_%28denim_shorts%29_%28cropped%29.jpg" class="card-img-top" alt="..."></img>`;
+    domString += `<div class="card h-100 d-flex flex-column justify-content-between">`;
+    domString += `<img src=${products[i].pictureURL} alt="..."/>`;
     domString += `<div class="card-body">`;
     domString += `<h5 class="card-title">${products[i].name}</h5>`;
     domString += `<p class="card-text">${products[i].description}</p>`;
+    domString += `<p class="card-text"><em>${products[i].season}</em></p>`;
     domString += `<footer><strong>${products[i].price}</strong></footer>`;
     domString += `</div>`;
     domString += `</div>`;
@@ -198,11 +199,12 @@ const buildShopCards = () => {
   let domString = '';
 
   for (let i = 3; i < products.length; i++) {
-    domString += `<div class="card" style="width: 18rem;">`;
-    domString += `<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Young_man_wearing_jorts_%28denim_shorts%29_%28cropped%29.jpg/330px-Young_man_wearing_jorts_%28denim_shorts%29_%28cropped%29.jpg" class="card-img-top" alt="..."></img>`;
+    domString += `<div class="card h-100 d-flex flex-column justify-content-between">`;
+    domString += `<img src=${products[i].pictureURL} alt="..."/>`;
     domString += `<div class="card-body">`;
     domString += `<h5 class="card-title">${products[i].name}</h5>`;
     domString += `<p class="card-text">${products[i].description}</p>`;
+    domString += `<p class="card-text"><em>${products[i].season}</em></p>`;
     domString += `<footer><strong>${products[i].price}</strong></footer>`;
     domString += `</div>`;
     domString += `</div>`;

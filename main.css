@@ -103,6 +103,7 @@ body {
   text-align: center;
   padding: 50px;
   font-size: 20px;
+  color: white;
 }
 
 .ptext {
@@ -274,7 +275,7 @@ img {
 .fashionTitle {
   color: white;
   text-align: center;
-  border: 2px solid white ;
+  border: 2px solid white;
   background-color: tan;
   font-family: sans-serif;
   box-shadow: tomato 3px;
@@ -296,11 +297,10 @@ img {
   margin: 0 auto;
 }
 
- .carousel {
+.carousel {
   width: 500px;
   height: 500px;
   border: 2px solid tan;
   margin: 0 auto;
   font-family: sans-serif;
 }
-

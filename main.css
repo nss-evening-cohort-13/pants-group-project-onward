@@ -184,9 +184,7 @@ img {
   height: auto;
 }
 
-img:hover {
-  transform: scaleX(-1);
-}
+
 /* The See More Button */
 .moreButton {
   display: flex;

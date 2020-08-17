@@ -105,10 +105,37 @@ const activateJsByPage = () => {
   } else if (urlName.includes('#targetContact')) {
     document.getElementById('contact-page').classList.add('active');
     initRb();
+  } else if (urlName.includes('index.html')) {
+    initHome();
   }
 };
 
 // *** Home page ***
+
+const seasonalJorts = selectedSeason => {
+  let domString = '';
+  for (let i = 0; i < products.length; i++) {
+    if (products[i].season.toLowerCase().includes(selectedSeason) === true) {
+      {
+        domString += `<div class="card" style="width: 18rem;">`;
+        domString += `<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Young_man_wearing_jorts_%28denim_shorts%29_%28cropped%29.jpg/330px-Young_man_wearing_jorts_%28denim_shorts%29_%28cropped%29.jpg" class="card-img-top" alt="..."></img>`;
+        domString += `<div class="card-body">`;
+        domString += `<h5 class="card-title">${products[i].name}</h5>`;
+        domString += `<p class="card-text">${products[i].description}</p>`;
+        domString += `<p class="card-text">Season: ${products[i].season}</p>`;
+        domString += `<footer><strong>${products[i].price}</strong></footer>`;
+        domString += `</div>`;
+        domString += `</div>`;
+      }
+    }
+  }
+  printToDom(`${selectedSeason}-jorts`, domString);
+};
+
+const initHome = () => {
+  seasonalJorts('summer');
+  seasonalJorts('fall');
+};
 
 // *** End home page ***
 
@@ -120,9 +147,9 @@ const printToDom = (divID, textToPrint) => {
 };
 
 //The Search
-const showCards = (searchString) => {
+const showCards = searchString => {
   let domString = '';
-  let searchedCards = products.filter((item) => {
+  let searchedCards = products.filter(item => {
     if (
       item.name.toLowerCase().includes(searchString) ||
       item.season.toLowerCase().includes(searchString)
@@ -142,12 +169,12 @@ const showCards = (searchString) => {
   };
 
 const eventSearch = () => {
-searchBox.addEventListener("keyup", (e) => {
-  let searchChars = [];
-  const searchBox = document.getElementById("searchBox");
-  const searchString = e.target.value.toLowerCase();
-  showCards(searchString);
-});
+  searchBox.addEventListener('keyup', e => {
+    let searchChars = [];
+    const searchBox = document.getElementById('searchBox');
+    const searchString = e.target.value.toLowerCase();
+    showCards(searchString);
+  });
 };
 
 // Build first Cards
@@ -252,7 +279,7 @@ const buildModal = () => {
           <p>Comments: ${userInfoArray[i].comments}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Go Back</button>
           <button type="button" class="btn" id="modalConfirm" data-dismiss="modal" data-toggle="modal" data-target="#confirmationModal">Confirm</button>
         </div>
       </div>
@@ -287,36 +314,35 @@ const confirmSubmit = e => {
                         </div>
                     </div>
                 </div>
-            </div>`
-            document.querySelector('#userName').value = '';
-            document.querySelector('#userEmail').value = '';
-            document.querySelector('#userComments').value = '';
-        }
-        printModalToDom('modalContainer', domString);
-    }
+            </div>`;
+    document.querySelector('#userName').value = '';
+    document.querySelector('#userEmail').value = '';
+    document.querySelector('#userComments').value = '';
+  }
+  printModalToDom('modalContainer', domString);
+};
 
 const printModalToDom = (divId, textToPrint) => {
-    const selectedDiv = document.getElementById(divId);
-    selectedDiv.innerHTML = textToPrint;
-  };
+  const selectedDiv = document.getElementById(divId);
+  selectedDiv.innerHTML = textToPrint;
+};
 
-  const submitUserInfo = (e) => {
-      const target = e.target.id;
+const submitUserInfo = e => {
+  const target = e.target.id;
 
-      for (let i = 0; i < userInfoArray.length; i++) {
-      if (target === 'formSubmitBtn') {
-        const name = document.querySelector('#userName').value;
-        const email = document.querySelector('#userEmail').value;
-        const comments = document.querySelector('#userComments').value;
-        userInfoArray[i].name = name;
-        userInfoArray[i].email = email;
-        userInfoArray[i].comments = comments;
+  for (let i = 0; i < userInfoArray.length; i++) {
+    if (target === 'formSubmitBtn') {
+      const name = document.querySelector('#userName').value;
+      const email = document.querySelector('#userEmail').value;
+      const comments = document.querySelector('#userComments').value;
+      userInfoArray[i].name = name;
+      userInfoArray[i].email = email;
+      userInfoArray[i].comments = comments;
     }
   }
 };
 
 const contactButtonEvent = () => {
-  for (let i = 0; i < userInfoArray.length; i++) {
     document
       .querySelector('#formSubmitBtn')
       .addEventListener('click', submitUserInfo);
@@ -326,7 +352,6 @@ const contactButtonEvent = () => {
     document
       .querySelector('#modalContainer')
       .addEventListener('click', confirmSubmit);
-  }
 };
 
 const changeAboutContactLinkColor = e => {
@@ -360,7 +385,7 @@ const initRb = () => {
 const userImg = [
   {
     imageUrl:
-      'https://cdn.shopify.com/s/files/1/1977/8779/products/1000SWP_JORTS_1.jpg?v=1582908352git ',
+      "https://cdn.shopify.com/s/files/1/1977/8779/products/1000SWP_JORTS_1.jpg?v=1582908352",
   },
   {
     imageUrl:
@@ -374,13 +399,11 @@ const buildSlideshow = () => {
   domstring += `<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">`;
   domstring += `<ol class="carousel-indicators">`;
   for (let i = 0; i < userImg.length; i++) {
-    domstring += `<li data-target="#carouselExampleIndicators" data-slide-to="${i}" class="${
-      i === 0 ? 'active' : ''
-    }"></li>`;
+    domstring += `<li data-target="#carouselExampleIndicators" data-slide-to="${i}" class="${i === 0 ? 'active' : ''}"></li>`;
   }
   domstring += `</ol>`;
   domstring += `<div class="carousel-inner">`;
-  for (let i = 0; i < userImg.length; i++) {
+   for (let i = 0; i < userImg.length; i++) {
     domstring += `<div class="carousel-item ${i === 0 ? 'active' : ''}">`;
     domstring += `<img src=${userImg[i].imageUrl} class="d-block w-100" alt="...">`;
     domstring += `</div>`;
@@ -398,16 +421,34 @@ const buildSlideshow = () => {
   printToDom('slideshow', domstring);
 };
 
+
 const askForInput = () => {
   const inputUpload = document.querySelector('#upload-img');
 
-  inputUpload.addEventListener('change', e => {
-    const objectURL = URL.createObjectURL(inputUpload.files[0]);
+// const inputUpload = document.querySelector("#upload-img");
+
+inputUpload.addEventListener("change", (e) => {
+  const objectURL = URL.createObjectURL(inputUpload.files[0]);
+
+  userImg.push({ imageUrl: objectURL });
+  buildSlideshow();
+    });
+
+
+
+    
+
+initDM = () => {
+  buildSlideshow();
+  askForInput()
+
+};
+seeWindowHref()
 
     userImg.push({ imageUrl: objectURL });
     buildSlideshow();
-  });
-};
+  };
+
 
 initDM = () => {
   buildSlideshow();

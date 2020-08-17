@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Jort Port</title>
-    <link rel="stylesheet" href="main.css" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -19,10 +18,11 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="main.css" />
   </head>
-  <body>
+  <body class="bodyHome">
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar fixed-top navbar-expand-lg">
       <a class="navbar-brand" href="./index.html">Jort Port</a>
       <button
         class="navbar-toggler"
@@ -66,59 +66,65 @@
             >
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
+        <!-- <form class="form-inline my-2 my-lg-0">
           <input
             class="form-control mr-sm-2"
             type="search"
             placeholder="Search"
             aria-label="Search"
-          />
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+          /> -->
+        <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
             Search
           </button>
-        </form>
+        </form> -->
       </div>
     </nav>
     <!-- End navbar -->
 
-    <h1 class="title">Summer Selection</h1>
-    <section id="photos">
-      <img
-        src="images/home-page/jorts1.jpg"
-        alt="A man wearing blue denim jorts."
-      />
-      <img
-        src="images/home-page/jorts2.jpg"
-        alt="A woman wearing blue denim jorts."
-      />
-      <img
-        src="images/home-page/jorts1.jpg"
-        alt="A man wearing blue denim jorts."
-      />
-      <img
-        src="images/home-page/jorts2.jpg"
-        alt="A woman wearing blue denim jorts."
-      />
-      <img
-        src="images/home-page/jorts1.jpg"
-        alt="A man wearing blue denim jorts."
-      />
-      <img
-        src="images/home-page/jorts2.jpg"
-        alt="A woman wearing blue denim jorts."
-      />
-      <img
-        src="images/home-page/jorts1.jpg"
-        alt="A man wearing blue denim jorts."
-      />
-      <img
-        src="images/home-page/jorts2.jpg"
-        alt="A woman wearing blue denim jorts."
-      />
-      <img
-        src="images/home-page/jorts2.jpg"
-        alt="A woman wearing blue denim jorts."
-      />
+    <div class="home-img1">
+      <div class="ptext">
+        <span class="border">Jort Port</span>
+      </div>
+    </div>
+
+    <section class="home-text" class="section-light">
+      <h2>Summer 2020 Collection</h2>
+      <div id="summer-jorts" class="seasonal-jorts"></div>
+      <h2>Fall 2020 Collection</h2>
+      <div id="fall-jorts" class="seasonal-jorts"></div>
+    </section>
+
+    <div class="home-img2">
+      <div class="ptext">
+        <span class="border">premium quality</span>
+      </div>
+    </div>
+
+    <section class="home-text" class="section-dark">
+      <ul class="premium">
+        <li>Handcrafted by our team of experienced artisans</li>
+        <li>
+          Attention to detail: no exposed threads, uniform stitching, no loose
+          buttons
+        </li>
+        <li>Made in the United States</li>
+      </ul>
+    </section>
+
+    <div class="home-img3">
+      <div class="ptext">
+        <span class="border">Sustainble</span>
+      </div>
+    </div>
+
+    <section class="home-text" class="section-dark">
+      <ul class="sustainable">
+        <li>
+          Patented hybrid material of cotton and recycled water bottles bottles
+        </li>
+        <li>35% reduction of water in all manufacturing processes</li>
+        <li>We support sustainable cotton farming and farmers</li>
+      </ul>
     </section>
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

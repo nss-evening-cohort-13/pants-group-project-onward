@@ -96,6 +96,7 @@ const activateJsByPage = () => {
   const urlName = window.location.href;
   if (urlName.includes('shop.html') === true) {
     shopInit();
+    eventSearch();
   } else if (urlName.includes('fashion.html') === true) {
     initDM();
   } else if (urlName.includes('#targetAbout') === true) {
@@ -118,6 +119,38 @@ const printToDom = (divID, textToPrint) => {
   selectedDiv.innerHTML = textToPrint;
 };
 
+//The Search
+const showCards = (searchString) => {
+  let domString = '';
+  let searchedCards = products.filter((item) => {
+    if (
+      item.name.toLowerCase().includes(searchString) ||
+      item.season.toLowerCase().includes(searchString)
+    ) {
+          domString += `<div class="card" style="width: 18rem;">`;
+          domString += `<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Young_man_wearing_jorts_%28denim_shorts%29_%28cropped%29.jpg/330px-Young_man_wearing_jorts_%28denim_shorts%29_%28cropped%29.jpg" class="card-img-top" alt="..."></img>`;
+          domString += `<div class="card-body">`;
+          domString += `<h5 class="card-title">${item.name}</h5>`;
+          domString += `<p class="card-text">${item.description}</p>`;
+          domString += `<p class="card-text">Season: ${item.season}</p>`;
+          domString += `<footer><strong>${item.price}</strong></footer>`;
+          domString += `</div>`;
+          domString += `</div>`;
+      }
+      printToDom("first", domString);
+    });
+  };
+
+const eventSearch = () => {
+searchBox.addEventListener("keyup", (e) => {
+  let searchChars = [];
+  const searchBox = document.getElementById("searchBox");
+  const searchString = e.target.value.toLowerCase();
+  showCards(searchString);
+});
+};
+
+// Build first Cards
 const buildFirstCards = () => {
   let domString = '';
 
@@ -323,7 +356,7 @@ const initRb = () => {
 const userImg = [
   {
     imageUrl:
-      'https://cdn.shopify.com/s/files/1/1977/8779/products/1000SWP_JORTS_1.jpg?v=1582908352git ',
+      "https://cdn.shopify.com/s/files/1/1977/8779/products/1000SWP_JORTS_1.jpg?v=1582908352",
   },
   {
     imageUrl:
@@ -337,13 +370,11 @@ const buildSlideshow = () => {
   domstring += `<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">`;
   domstring += `<ol class="carousel-indicators">`;
   for (let i = 0; i < userImg.length; i++) {
-    domstring += `<li data-target="#carouselExampleIndicators" data-slide-to="${i}" class="${
-      i === 0 ? 'active' : ''
-    }"></li>`;
+    domstring += `<li data-target="#carouselExampleIndicators" data-slide-to="${i}" class="${i === 0 ? 'active' : ''}"></li>`;
   }
   domstring += `</ol>`;
   domstring += `<div class="carousel-inner">`;
-  for (let i = 0; i < userImg.length; i++) {
+   for (let i = 0; i < userImg.length; i++) {
     domstring += `<div class="carousel-item ${i === 0 ? 'active' : ''}">`;
     domstring += `<img src=${userImg[i].imageUrl} class="d-block w-100" alt="...">`;
     domstring += `</div>`;
@@ -361,16 +392,30 @@ const buildSlideshow = () => {
   printToDom('slideshow', domstring);
 };
 
+
 const askForInput = () => {
   const inputUpload = document.querySelector('#upload-img');
 
-  inputUpload.addEventListener('change', e => {
-    const objectURL = URL.createObjectURL(inputUpload.files[0]);
+// const inputUpload = document.querySelector("#upload-img");
+
+inputUpload.addEventListener("change", (e) => {
+  const objectURL = URL.createObjectURL(inputUpload.files[0]);
+
+  userImg.push({ imageUrl: objectURL });
+  buildSlideshow();
+    });
+
+initDM = () => {
+  buildSlideshow();
+  askForInput()
+
+};
+seeWindowHref()
 
     userImg.push({ imageUrl: objectURL });
     buildSlideshow();
-  });
-};
+  };
+
 
 initDM = () => {
   buildSlideshow();

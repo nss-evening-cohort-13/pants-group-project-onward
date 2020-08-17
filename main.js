@@ -118,7 +118,7 @@ const seasonalJorts = selectedSeason => {
     if (products[i].season.toLowerCase().includes(selectedSeason) === true) {
       {
         domString += `<div class="card" style="width: 18rem;">`;
-        domString += `<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Young_man_wearing_jorts_%28denim_shorts%29_%28cropped%29.jpg/330px-Young_man_wearing_jorts_%28denim_shorts%29_%28cropped%29.jpg" class="card-img-top" alt="..."></img>`;
+        domString += `<img src=${products[i].pictureURL} class="card-img-top" alt="..."></img>`;
         domString += `<div class="card-body">`;
         domString += `<h5 class="card-title">${products[i].name}</h5>`;
         domString += `<p class="card-text">${products[i].description}</p>`;
@@ -154,12 +154,12 @@ const showCards = (searchString) => {
       item.name.toLowerCase().includes(searchString) ||
       item.season.toLowerCase().includes(searchString)
     ) {
-      domString += `<div class="card" style="width: 18rem;">`;
-      domString += `<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Young_man_wearing_jorts_%28denim_shorts%29_%28cropped%29.jpg/330px-Young_man_wearing_jorts_%28denim_shorts%29_%28cropped%29.jpg" class="card-img-top" alt="..."></img>`;
+      domString += `<div class="card h-100 d-flex flex-column justify-content-between">`;
+      domString += `<img src=${item.pictureURL} alt="..."/>`;
       domString += `<div class="card-body">`;
       domString += `<h5 class="card-title">${item.name}</h5>`;
       domString += `<p class="card-text">${item.description}</p>`;
-      domString += `<p class="card-text">Season: ${item.season}</p>`;
+      domString += `<p class="card-text"><em>Season: ${item.season}</em></p>`;
       domString += `<footer><strong>${item.price}</strong></footer>`;
       domString += `</div>`;
       domString += `</div>`;
@@ -182,11 +182,12 @@ const buildFirstCards = () => {
   let domString = "";
 
   for (let i = 0; i <= 2; i++) {
-    domString += `<div class="card" style="width: 18rem;">`;
-    domString += `<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Young_man_wearing_jorts_%28denim_shorts%29_%28cropped%29.jpg/330px-Young_man_wearing_jorts_%28denim_shorts%29_%28cropped%29.jpg" class="card-img-top" alt="..."></img>`;
+    domString += `<div class="card h-100 d-flex flex-column justify-content-between">`;
+    domString += `<img src=${products[i].pictureURL} alt="..."/>`;
     domString += `<div class="card-body">`;
     domString += `<h5 class="card-title">${products[i].name}</h5>`;
     domString += `<p class="card-text">${products[i].description}</p>`;
+    domString += `<p class="card-text"><em>${products[i].season}</em></p>`;
     domString += `<footer><strong>${products[i].price}</strong></footer>`;
     domString += `</div>`;
     domString += `</div>`;
@@ -198,11 +199,12 @@ const buildShopCards = () => {
   let domString = "";
 
   for (let i = 3; i < products.length; i++) {
-    domString += `<div class="card" style="width: 18rem;">`;
-    domString += `<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Young_man_wearing_jorts_%28denim_shorts%29_%28cropped%29.jpg/330px-Young_man_wearing_jorts_%28denim_shorts%29_%28cropped%29.jpg" class="card-img-top" alt="..."></img>`;
+    domString += `<div class="card h-100 d-flex flex-column justify-content-between">`;
+    domString += `<img src=${products[i].pictureURL} alt="..."/>`;
     domString += `<div class="card-body">`;
     domString += `<h5 class="card-title">${products[i].name}</h5>`;
     domString += `<p class="card-text">${products[i].description}</p>`;
+    domString += `<p class="card-text"><em>${products[i].season}</em></p>`;
     domString += `<footer><strong>${products[i].price}</strong></footer>`;
     domString += `</div>`;
     domString += `</div>`;
@@ -383,7 +385,7 @@ const initRb = () => {
 const userImg = [
   {
     imageUrl:
-      "https://cdn.shopify.com/s/files/1/1977/8779/products/1000SWP_JORTS_1.jpg?v=1582908352",
+      'https://cdn.shopify.com/s/files/1/1977/8779/products/1000SWP_JORTS_1.jpg?v=1582908352',
   },
   {
     imageUrl:

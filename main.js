@@ -105,10 +105,37 @@ const activateJsByPage = () => {
   } else if (urlName.includes("#targetContact")) {
     document.getElementById("contact-page").classList.add("active");
     initRb();
+  } else if (urlName.includes('index.html')) {
+    initHome();
   }
 };
 
 // *** Home page ***
+
+const seasonalJorts = selectedSeason => {
+  let domString = '';
+  for (let i = 0; i < products.length; i++) {
+    if (products[i].season.toLowerCase().includes(selectedSeason) === true) {
+      {
+        domString += `<div class="card" style="width: 18rem;">`;
+        domString += `<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Young_man_wearing_jorts_%28denim_shorts%29_%28cropped%29.jpg/330px-Young_man_wearing_jorts_%28denim_shorts%29_%28cropped%29.jpg" class="card-img-top" alt="..."></img>`;
+        domString += `<div class="card-body">`;
+        domString += `<h5 class="card-title">${products[i].name}</h5>`;
+        domString += `<p class="card-text">${products[i].description}</p>`;
+        domString += `<p class="card-text">Season: ${products[i].season}</p>`;
+        domString += `<footer><strong>${products[i].price}</strong></footer>`;
+        domString += `</div>`;
+        domString += `</div>`;
+      }
+    }
+  }
+  printToDom(`${selectedSeason}-jorts`, domString);
+};
+
+const initHome = () => {
+  seasonalJorts('summer');
+  seasonalJorts('fall');
+};
 
 // *** End home page ***
 

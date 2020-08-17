@@ -53,24 +53,84 @@ body {
 }
 
 /*** Home Page  ***/
-#photos {
-  margin: 5%;
-  padding: 5%;
-  border: #dbab3f 2px solid;
-  line-height: 0;
-  column-count: 4;
-  column-gap: 10px;
+
+.bodyHome {
+  height: 100%;
+  margin: 0;
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.8em;
+  color: black;
 }
 
-#photos img {
+.seasonal-jorts {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.home-img1,
+.home-img2,
+.home-img3 {
+  position: relative;
+  opacity: 0.75;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* fixed = parallax, scroll = normal */
+  background-attachment: fixed;
+}
+
+.sustainable,
+.premium {
+  list-style: none;
+}
+
+.home-img1 {
+  background-image: url('images/home-page/urban3.jpg');
+  min-height: 700px;
+}
+.home-img2 {
+  background-image: url('images/home-page/bus-stop.jpg');
+  min-height: 300px;
+}
+.home-img3 {
+  background-image: url('images/home-page/urban2.jpg');
+  min-height: 300px;
+}
+
+.home-text {
+  text-align: center;
+  padding: 50px;
+  font-size: 20px;
+}
+
+.ptext {
+  position: absolute;
+  top: 35%;
   width: 100%;
-  height: auto;
-  margin: 5px;
+  text-align: center;
+  color: #1a2e3c;
+  font-size: 50px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-family: 'Black Ops One', cursive;
 }
 
-.title {
-  margin: 5%;
+.ptext .border {
+  background-color: white;
+  padding: 10px;
 }
+@media (max-width: 568px) {
+  .home-img1,
+  .home-img2,
+  .home-img3 {
+    background-attachment: scroll;
+  }
+}
+
+/* End home page CSS */
+
 /* Product Page, Cards */
 .product {
   display: flex;
@@ -136,7 +196,6 @@ img {
   color: #dbab3f;
   font-family: 'Open Sans', sans-serif;
 }
-
 
 /* Contact Us */
 

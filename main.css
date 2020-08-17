@@ -53,24 +53,73 @@ body {
 }
 
 /*** Home Page  ***/
-#photos {
-  margin: 5%;
-  padding: 5%;
-  border: #dbab3f 2px solid;
-  line-height: 0;
-  column-count: 4;
-  column-gap: 10px;
+
+.bodyHome {
+  height: 100%;
+  margin: 0;
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.8em;
+  color: black;
 }
 
-#photos img {
+.home-img1,
+.home-img2,
+.home-img3 {
+  position: relative;
+  opacity: 0.8;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* fixed = parallax, scroll = normal */
+  background-attachment: fixed;
+}
+
+.home-img1 {
+  background-image: url('images/home-page/urban4.jpg');
+  min-height: 1000px;
+}
+.home-img2 {
+  background-image: url('images/home-page/bus-stop.jpg');
+  min-height: 400px;
+}
+.home-img3 {
+  background-image: url('images/home-page/urban3.jpg');
+  min-height: 400px;
+}
+
+.home-text {
+  text-align: center;
+  padding: 50px 80px;
+}
+
+.ptext {
+  position: absolute;
+  top: 50%;
   width: 100%;
-  height: auto;
-  margin: 5px;
+  text-align: center;
+  color: black;
+  font-size: 26px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  font-family: 'Black Ops One', cursive;
 }
 
-.title {
-  margin: 5%;
+.ptext .border {
+  background-color: white;
+  padding: 15px;
 }
+@media (max-width: 568px) {
+  .home-img1,
+  .home-img2,
+  .home-img3 {
+    background-attachment: scroll;
+  }
+}
+
+/* End home page CSS */
+
 /* Product Page, Cards */
 .product {
   display: flex;
@@ -137,7 +186,6 @@ img {
   font-family: 'Open Sans', sans-serif;
 }
 
-
 /* Contact Us */
 
 .name-email--container {
@@ -196,7 +244,7 @@ body {
 .fashionTitle {
   color: white;
   text-align: center;
-  border: 2px solid white ;
+  border: 2px solid white;
 }
 
 .img-adder {
@@ -207,5 +255,5 @@ body {
 
 .choose-photo {
   color: white;
-  border: 2px solid white
+  border: 2px solid white;
 }

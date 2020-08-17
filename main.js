@@ -105,10 +105,37 @@ const activateJsByPage = () => {
   } else if (urlName.includes('#targetContact')) {
     document.getElementById('contact-page').classList.add('active');
     initRb();
+  } else if (urlName.includes('index.html')) {
+    initHome();
   }
 };
 
 // *** Home page ***
+
+const seasonalJorts = selectedSeason => {
+  let domString = '';
+  for (let i = 0; i < products.length; i++) {
+    if (products[i].season.toLowerCase().includes(selectedSeason) === true) {
+      {
+        domString += `<div class="card" style="width: 18rem;">`;
+        domString += `<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Young_man_wearing_jorts_%28denim_shorts%29_%28cropped%29.jpg/330px-Young_man_wearing_jorts_%28denim_shorts%29_%28cropped%29.jpg" class="card-img-top" alt="..."></img>`;
+        domString += `<div class="card-body">`;
+        domString += `<h5 class="card-title">${products[i].name}</h5>`;
+        domString += `<p class="card-text">${products[i].description}</p>`;
+        domString += `<p class="card-text">Season: ${products[i].season}</p>`;
+        domString += `<footer><strong>${products[i].price}</strong></footer>`;
+        domString += `</div>`;
+        domString += `</div>`;
+      }
+    }
+  }
+  printToDom(`${selectedSeason}-jorts`, domString);
+};
+
+const initHome = () => {
+  seasonalJorts('summer');
+  seasonalJorts('fall');
+};
 
 // *** End home page ***
 
@@ -120,34 +147,34 @@ const printToDom = (divID, textToPrint) => {
 };
 
 //The Search
-const showCards = (searchString) => {
+const showCards = searchString => {
   let domString = '';
-  let searchedCards = products.filter((item) => {
+  let searchedCards = products.filter(item => {
     if (
       item.name.toLowerCase().includes(searchString) ||
       item.season.toLowerCase().includes(searchString)
     ) {
-          domString += `<div class="card" style="width: 18rem;">`;
-          domString += `<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Young_man_wearing_jorts_%28denim_shorts%29_%28cropped%29.jpg/330px-Young_man_wearing_jorts_%28denim_shorts%29_%28cropped%29.jpg" class="card-img-top" alt="..."></img>`;
-          domString += `<div class="card-body">`;
-          domString += `<h5 class="card-title">${item.name}</h5>`;
-          domString += `<p class="card-text">${item.description}</p>`;
-          domString += `<p class="card-text">Season: ${item.season}</p>`;
-          domString += `<footer><strong>${item.price}</strong></footer>`;
-          domString += `</div>`;
-          domString += `</div>`;
-      }
-      printToDom("first", domString);
-    });
-  };
+      domString += `<div class="card" style="width: 18rem;">`;
+      domString += `<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Young_man_wearing_jorts_%28denim_shorts%29_%28cropped%29.jpg/330px-Young_man_wearing_jorts_%28denim_shorts%29_%28cropped%29.jpg" class="card-img-top" alt="..."></img>`;
+      domString += `<div class="card-body">`;
+      domString += `<h5 class="card-title">${item.name}</h5>`;
+      domString += `<p class="card-text">${item.description}</p>`;
+      domString += `<p class="card-text">Season: ${item.season}</p>`;
+      domString += `<footer><strong>${item.price}</strong></footer>`;
+      domString += `</div>`;
+      domString += `</div>`;
+    }
+    printToDom('first', domString);
+  });
+};
 
 const eventSearch = () => {
-searchBox.addEventListener("keyup", (e) => {
-  let searchChars = [];
-  const searchBox = document.getElementById("searchBox");
-  const searchString = e.target.value.toLowerCase();
-  showCards(searchString);
-});
+  searchBox.addEventListener('keyup', e => {
+    let searchChars = [];
+    const searchBox = document.getElementById('searchBox');
+    const searchString = e.target.value.toLowerCase();
+    showCards(searchString);
+  });
 };
 
 // Build first Cards
@@ -285,30 +312,30 @@ const confirmSubmit = e => {
                         </div>
                     </div>
                 </div>
-            </div>`
-            document.querySelector('#userName').value = '';
-            document.querySelector('#userEmail').value = '';
-            document.querySelector('#userComments').value = '';
-        }
-        printModalToDom('modalContainer', domString);
-    }
+            </div>`;
+    document.querySelector('#userName').value = '';
+    document.querySelector('#userEmail').value = '';
+    document.querySelector('#userComments').value = '';
+  }
+  printModalToDom('modalContainer', domString);
+};
 
 const printModalToDom = (divId, textToPrint) => {
-    const selectedDiv = document.getElementById(divId);
-    selectedDiv.innerHTML = textToPrint;
-  };
+  const selectedDiv = document.getElementById(divId);
+  selectedDiv.innerHTML = textToPrint;
+};
 
-  const submitUserInfo = (e) => {
-      const target = e.target.id;
+const submitUserInfo = e => {
+  const target = e.target.id;
 
-      for (let i = 0; i < userInfoArray.length; i++) {
-      if (target === 'formSubmitBtn') {
-        const name = document.querySelector('#userName').value;
-        const email = document.querySelector('#userEmail').value;
-        const comments = document.querySelector('#userComments').value;
-        userInfoArray[i].name = name;
-        userInfoArray[i].email = email;
-        userInfoArray[i].comments = comments;
+  for (let i = 0; i < userInfoArray.length; i++) {
+    if (target === 'formSubmitBtn') {
+      const name = document.querySelector('#userName').value;
+      const email = document.querySelector('#userEmail').value;
+      const comments = document.querySelector('#userComments').value;
+      userInfoArray[i].name = name;
+      userInfoArray[i].email = email;
+      userInfoArray[i].comments = comments;
     }
   }
 };

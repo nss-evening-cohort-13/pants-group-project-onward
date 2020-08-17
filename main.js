@@ -170,8 +170,6 @@ const showCards = searchString => {
 
 const eventSearch = () => {
   searchBox.addEventListener('keyup', e => {
-    let searchChars = [];
-    const searchBox = document.getElementById('searchBox');
     const searchString = e.target.value.toLowerCase();
     showCards(searchString);
   });

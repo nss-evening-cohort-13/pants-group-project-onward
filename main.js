@@ -1,120 +1,109 @@
-'Use Strict';
+"Use Strict";
 
 // Product Page
 const products = [
   {
-    name: 'The Classic Jort',
-    pictureURL:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Young_man_wearing_jorts_%28denim_shorts%29_%28cropped%29.jpg/330px-Young_man_wearing_jorts_%28denim_shorts%29_%28cropped%29.jpg',
-    description: 'A classic pair of jorts for a classic look!',
-    price: '$12.99',
-    season: 'SPRING',
+    name: "The Classic Jort",
+    pictureURL: "placeholder",
+    description: "A classic pair of jorts for a classic look!",
+    price: "$12.99",
+    season: "SPRING",
   },
   {
-    name: 'Long Jort',
-    pictureURL:
-      'https://i5.walmartimages.com/asr/f705d800-859a-468a-8396-a523bd4e8a09_1.3fff5979462bac1a3ebf2468e6f43a6a.jpeg',
-    description: 'A longer jort for those cooler months!',
-    price: '$16.99',
-    season: 'WINTER',
+    name: "Long Jort",
+    pictureURL: "placeholder",
+    description: "A longer jort for those cooler months!",
+    price: "$16.99",
+    season: "WINTER",
   },
   {
-    name: 'Short Jort',
-    pictureURL:
-      'https://images-na.ssl-images-amazon.com/images/I/713zBAX5wrL._AC_UX679_.jpg',
+    name: "Short Jort",
+    pictureURL: "placeholder",
     description:
-      'Let go of the constraints of good fashion, and enjoy an unrestricted garment for the hottest months!',
-    price: '$14.99',
-    season: 'Summer',
+      "Let go of the constraints of good fashion, and enjoy an unrestricted garment for the hottest months!",
+    price: "$14.99",
+    season: "Summer",
   },
   {
-    name: 'MEGA Jort',
-    pictureURL:
-      'https://i.pinimg.com/236x/9b/9f/03/9b9f03b8f17a6811008de191034745d6--fashion-advice-kevin-oleary.jpg',
+    name: "MEGA Jort",
+    pictureURL: "placeholder",
     description:
-      'Big jorts, big functionality! legal disclaimer: not to be used as a parachute.',
-    price: '$21.99',
-    season: 'Fall',
+      "Big jorts, big functionality! legal disclaimer: not to be used as a parachute.",
+    price: "$21.99",
+    season: "Fall",
   },
   {
-    name: 'Canadian Tuxedo Jort',
-    pictureURL: 'https://www.suitusa.com/images/image46323.jpg',
+    name: "Canadian Tuxedo Jort",
+    pictureURL: "placeholder",
     description:
-      'Put your best foot forward, while still somehow going backward!',
-    price: '$15.99',
-    season: 'Spring',
+      "Put your best foot forward, while still somehow going backward!",
+    price: "$15.99",
+    season: "Spring",
   },
   {
-    name: 'Black Jorts',
-    pictureURL:
-      'https://i.etsystatic.com/7679539/r/il/14d86e/507544359/il_570xN.507544359_4mfv.jpg',
+    name: "Black Jorts",
+    pictureURL: "placeholder",
     description: "IT'S NOT A PHASE, MOM!",
-    price: '$14.99',
-    season: 'Winter',
+    price: "$14.99",
+    season: "Winter",
   },
   {
-    name: 'Dad Jorts',
-    pictureURL:
-      'https://i.pinimg.com/originals/8a/09/e5/8a09e5e7789694a6235368e05488a434.jpg',
+    name: "Dad Jorts",
+    pictureURL: "placeholder",
     description: "Hey jorts! I'm Dad!",
-    price: '$17.99',
-    season: 'Summer',
+    price: "$17.99",
+    season: "Summer",
   },
   {
-    name: 'Mom Jorts',
-    pictureURL:
-      'https://lsco.scene7.com/is/image/lsco/levis/clothing/168880001-back-pdp.jpg?$regular_mobile$',
-    description: 'Does this jort make me look tacky?',
-    price: '$12.99',
-    season: 'Fall',
+    name: "Mom Jorts",
+    pictureURL: "placeholder",
+    description: "Does this jort make me look tacky?",
+    price: "$12.99",
+    season: "Fall",
   },
   {
-    name: 'Green Jorts',
-    pictureURL:
-      'https://di2ponv0v5otw.cloudfront.net/posts/2018/11/12/5be9fca3c9bf503e5a9a88e6/m_5be9fcb12e1478dcd10076a2.jpg',
-    description: 'Leprechauns envy you.',
-    price: '$14.99',
-    season: 'Spring',
+    name: "Green Jorts",
+    pictureURL: "placeholder",
+    description: "Leprechauns envy you.",
+    price: "$14.99",
+    season: "Spring",
   },
   {
-    name: 'Not Jorts',
-    pictureURL:
-      'https://previews.123rf.com/images/gorovits/gorovits1603/gorovits160300442/53361383-stylish-paper-sticker-on-white-background-men-s-shorts.jpg',
-    description: 'These are not jorts. Nor are they for sale. Or are they?',
-    price: '$1.99',
-    season: 'Winter',
+    name: "Not Jorts",
+    pictureURL: "placeholder",
+    description: "These are not jorts. Nor are they for sale. Or are they?",
+    price: "$1.99",
+    season: "Winter",
   },
   {
-    name: 'Cool Jorts',
-    pictureURL:
-      'https://www.valetmag.com/gr/daily/style/products/jorts_are_cool_again_062117/art-product1.jpg',
-    description: 'Must be this cool |-------x-| to wear.',
-    price: '$17.99',
-    season: 'Summer',
+    name: "Cool Jorts",
+    pictureURL: "placeholder",
+    description: "Must be this cool |-------x-| to wear.",
+    price: "$17.99",
+    season: "Summer",
   },
   {
-    name: 'Ugly Jorts',
-    pictureURL:
-      'https://i.pinimg.com/originals/9d/52/f5/9d52f58f1312ad829784a30cdd9fedc3.jpg',
+    name: "Ugly Jorts",
+    pictureURL: "placeholder",
     description: "Don't tell your uncle.",
-    price: '$22.99',
-    season: 'Fall',
+    price: "$22.99",
+    season: "Fall",
   },
 ];
 
 //Activate Js based on URL
 const activateJsByPage = () => {
   const urlName = window.location.href;
-  if (urlName.includes('shop.html') === true) {
+  if (urlName.includes("shop.html") === true) {
     shopInit();
     eventSearch();
-  } else if (urlName.includes('fashion.html') === true) {
+  } else if (urlName.includes("fashion.html") === true) {
     initDM();
-  } else if (urlName.includes('#targetAbout') === true) {
-    document.getElementById('about-page').classList.add('active');
+  } else if (urlName.includes("#targetAbout") === true) {
+    document.getElementById("about-page").classList.add("active");
     initRb();
-  } else if (urlName.includes('#targetContact')) {
-    document.getElementById('contact-page').classList.add('active');
+  } else if (urlName.includes("#targetContact")) {
+    document.getElementById("contact-page").classList.add("active");
     initRb();
   } else if (urlName.includes('index.html')) {
     initHome();
@@ -158,9 +147,9 @@ const printToDom = (divID, textToPrint) => {
 };
 
 //The Search
-const showCards = searchString => {
-  let domString = '';
-  let searchedCards = products.filter(item => {
+const showCards = (searchString) => {
+  let domString = "";
+  let searchedCards = products.filter((item) => {
     if (
       item.name.toLowerCase().includes(searchString) ||
       item.season.toLowerCase().includes(searchString)
@@ -175,14 +164,14 @@ const showCards = searchString => {
       domString += `</div>`;
       domString += `</div>`;
     }
-    printToDom('first', domString);
+    printToDom("first", domString);
   });
 };
 
 const eventSearch = () => {
-  searchBox.addEventListener('keyup', e => {
+  searchBox.addEventListener("keyup", (e) => {
     let searchChars = [];
-    const searchBox = document.getElementById('searchBox');
+    const searchBox = document.getElementById("searchBox");
     const searchString = e.target.value.toLowerCase();
     showCards(searchString);
   });
@@ -190,7 +179,7 @@ const eventSearch = () => {
 
 // Build first Cards
 const buildFirstCards = () => {
-  let domString = '';
+  let domString = "";
 
   for (let i = 0; i <= 2; i++) {
     domString += `<div class="card h-100 d-flex flex-column justify-content-between">`;
@@ -203,11 +192,11 @@ const buildFirstCards = () => {
     domString += `</div>`;
     domString += `</div>`;
   }
-  printToDom('first', domString);
+  printToDom("first", domString);
 };
 
 const buildShopCards = () => {
-  let domString = '';
+  let domString = "";
 
   for (let i = 3; i < products.length; i++) {
     domString += `<div class="card h-100 d-flex flex-column justify-content-between">`;
@@ -221,24 +210,24 @@ const buildShopCards = () => {
     domString += `</div>`;
   }
 
-  printToDom('product', domString);
+  printToDom("product", domString);
 };
 
 const btnText = () => {
-  let button = document.getElementById('moreLess');
+  let button = document.getElementById("moreLess");
 
-  if (button.innerHTML == 'See Less') {
-    button.innerHTML = 'See More';
+  if (button.innerHTML == "See Less") {
+    button.innerHTML = "See More";
   } else {
-    button.innerHTML = 'See Less';
+    button.innerHTML = "See Less";
   }
 };
 
 // Initialization Function
 const shopInit = () => {
   buildFirstCards();
-  document.getElementById('moreLess').addEventListener('click', buildShopCards);
-  document.getElementById('moreLess').addEventListener('click', btnText);
+  document.getElementById("moreLess").addEventListener("click", buildShopCards);
+  document.getElementById("moreLess").addEventListener("click", btnText);
 };
 
 // *** End product page ***
@@ -246,34 +235,34 @@ const shopInit = () => {
 // *** About Us / Contact Page JS ***
 const userInfoArray = [
   {
-    name: '',
-    email: '',
-    comments: '',
+    name: "",
+    email: "",
+    comments: "",
   },
 ];
 
 const buildModal = () => {
-  let domString = '';
-  let emailErrorString = '';
-  const nameErrorMessage = document.getElementById('userNameError');
-  const emailErrorMessage = document.getElementById('userEmailError');
+  let domString = "";
+  let emailErrorString = "";
+  const nameErrorMessage = document.getElementById("userNameError");
+  const emailErrorMessage = document.getElementById("userEmailError");
 
   for (let i = 0; i < userInfoArray.length; i++) {
-    if (userName.value === '' && userEmail.value === '') {
+    if (userName.value === "" && userEmail.value === "") {
       domString += '<p class="text-danger">Please enter a name</p>';
-      printModalToDom('userNameError', domString);
+      printModalToDom("userNameError", domString);
 
       emailErrorString +=
         '<p class="text-danger">Please enter an email address</p>';
-      printModalToDom('userEmailError', emailErrorString);
-    } else if (userName.value === '') {
+      printModalToDom("userEmailError", emailErrorString);
+    } else if (userName.value === "") {
       domString += '<p class="text-danger">Please enter a name</p>';
-      printModalToDom('userNameError', domString);
-      emailErrorMessage.textContent = '';
-    } else if (userEmail.value === '') {
+      printModalToDom("userNameError", domString);
+      emailErrorMessage.textContent = "";
+    } else if (userEmail.value === "") {
       domString += '<p class="text-danger">Please enter an email address</p>';
-      printModalToDom('userEmailError', domString);
-      nameErrorMessage.textContent = '';
+      printModalToDom("userEmailError", domString);
+      nameErrorMessage.textContent = "";
     } else {
       domString += `<div class="modal fade" id="userSubmitModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -296,15 +285,15 @@ const buildModal = () => {
       </div>
     </div>
   </div>`;
-      printModalToDom('modalContainer', domString);
-      nameErrorMessage.textContent = '';
-      emailErrorMessage.textContent = '';
+      printModalToDom("modalContainer", domString);
+      nameErrorMessage.textContent = "";
+      emailErrorMessage.textContent = "";
     }
   }
 };
 
-const confirmSubmit = e => {
-  let domString = '';
+const confirmSubmit = (e) => {
+  let domString = "";
 
   const target = e.target.id;
   if (target === `modalConfirm`) {
@@ -326,11 +315,11 @@ const confirmSubmit = e => {
                     </div>
                 </div>
             </div>`;
-    document.querySelector('#userName').value = '';
-    document.querySelector('#userEmail').value = '';
-    document.querySelector('#userComments').value = '';
+    document.querySelector("#userName").value = "";
+    document.querySelector("#userEmail").value = "";
+    document.querySelector("#userComments").value = "";
   }
-  printModalToDom('modalContainer', domString);
+  printModalToDom("modalContainer", domString);
 };
 
 const printModalToDom = (divId, textToPrint) => {
@@ -338,14 +327,14 @@ const printModalToDom = (divId, textToPrint) => {
   selectedDiv.innerHTML = textToPrint;
 };
 
-const submitUserInfo = e => {
+const submitUserInfo = (e) => {
   const target = e.target.id;
 
   for (let i = 0; i < userInfoArray.length; i++) {
-    if (target === 'formSubmitBtn') {
-      const name = document.querySelector('#userName').value;
-      const email = document.querySelector('#userEmail').value;
-      const comments = document.querySelector('#userComments').value;
+    if (target === "formSubmitBtn") {
+      const name = document.querySelector("#userName").value;
+      const email = document.querySelector("#userEmail").value;
+      const comments = document.querySelector("#userComments").value;
       userInfoArray[i].name = name;
       userInfoArray[i].email = email;
       userInfoArray[i].comments = comments;
@@ -355,34 +344,34 @@ const submitUserInfo = e => {
 
 const contactButtonEvent = () => {
   document
-    .querySelector('#formSubmitBtn')
-    .addEventListener('click', submitUserInfo);
+    .querySelector("#formSubmitBtn")
+    .addEventListener("click", submitUserInfo);
   document
-    .querySelector('#formSubmitBtn')
-    .addEventListener('click', buildModal);
+    .querySelector("#formSubmitBtn")
+    .addEventListener("click", buildModal);
   document
-    .querySelector('#modalContainer')
-    .addEventListener('click', confirmSubmit);
+    .querySelector("#modalContainer")
+    .addEventListener("click", confirmSubmit);
 };
 
-const changeAboutContactLinkColor = e => {
-  if (e.target.id === 'contact-page') {
-    document.getElementById('about-page').classList.remove('active');
-    document.getElementById('contact-page').classList.add('active');
+const changeAboutContactLinkColor = (e) => {
+  if (e.target.id === "contact-page") {
+    document.getElementById("about-page").classList.remove("active");
+    document.getElementById("contact-page").classList.add("active");
   }
-  if (e.target.id === 'about-page') {
-    document.getElementById('contact-page').classList.remove('active');
-    document.getElementById('about-page').classList.add('active');
+  if (e.target.id === "about-page") {
+    document.getElementById("contact-page").classList.remove("active");
+    document.getElementById("about-page").classList.add("active");
   }
 };
 
 const handleLinkClick = () => {
   document
-    .querySelector('#contact-page')
-    .addEventListener('click', changeAboutContactLinkColor);
+    .querySelector("#contact-page")
+    .addEventListener("click", changeAboutContactLinkColor);
   document
-    .querySelector('#about-page')
-    .addEventListener('click', changeAboutContactLinkColor);
+    .querySelector("#about-page")
+    .addEventListener("click", changeAboutContactLinkColor);
 };
 
 const initRb = () => {
@@ -400,24 +389,24 @@ const userImg = [
   },
   {
     imageUrl:
-      'https://cdn.shopify.com/s/files/1/0136/8820/9494/products/0209_680x680_crop_center.jpg?v=1595538457',
+      "https://cdn.shopify.com/s/files/1/0136/8820/9494/products/0209_680x680_crop_center.jpg?v=1595538457",
   },
 ];
 
 const buildSlideshow = () => {
-  let domstring = '';
+  let domstring = "";
 
   domstring += `<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">`;
   domstring += `<ol class="carousel-indicators">`;
   for (let i = 0; i < userImg.length; i++) {
     domstring += `<li data-target="#carouselExampleIndicators" data-slide-to="${i}" class="${
-      i === 0 ? 'active' : ''
+      i === 0 ? "active" : ""
     }"></li>`;
   }
   domstring += `</ol>`;
   domstring += `<div class="carousel-inner">`;
   for (let i = 0; i < userImg.length; i++) {
-    domstring += `<div class="carousel-item ${i === 0 ? 'active' : ''}">`;
+    domstring += `<div class="carousel-item ${i === 0 ? "active" : ""}">`;
     domstring += `<img src=${userImg[i].imageUrl} class="d-block w-100" alt="...">`;
     domstring += `</div>`;
   }
@@ -431,29 +420,18 @@ const buildSlideshow = () => {
   domstring += `<span class="sr-only">Next</span>`;
   domstring += `</a>`;
   domstring += `</div>`;
-  printToDom('slideshow', domstring);
+  printToDom("slideshow", domstring);
 };
 
 const askForInput = () => {
-  const inputUpload = document.querySelector('#upload-img');
+  const inputUpload = document.querySelector("#upload-img");
 
-  // const inputUpload = document.querySelector("#upload-img");
-
-  inputUpload.addEventListener('change', e => {
+  inputUpload.addEventListener("change", (e) => {
     const objectURL = URL.createObjectURL(inputUpload.files[0]);
 
     userImg.push({ imageUrl: objectURL });
     buildSlideshow();
   });
-
-  initDM = () => {
-    buildSlideshow();
-    askForInput();
-  };
-  seeWindowHref();
-
-  userImg.push({ imageUrl: objectURL });
-  buildSlideshow();
 };
 
 initDM = () => {

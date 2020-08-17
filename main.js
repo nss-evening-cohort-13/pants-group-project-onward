@@ -281,7 +281,6 @@ const printModalToDom = (divId, textToPrint) => {
 };
 
 const contactButtonEvent = () => {
-  for (let i = 0; i < userInfoArray.length; i++) {
     document
       .querySelector('#formSubmitBtn')
       .addEventListener('click', submitUserInfo);
@@ -291,7 +290,6 @@ const contactButtonEvent = () => {
     document
       .querySelector('#modalContainer')
       .addEventListener('click', confirmSubmit);
-  }
 };
 
 const changeAboutContactLinkColor = e => {
